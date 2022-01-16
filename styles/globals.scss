@@ -50,6 +50,7 @@
         height: 100%;
         width: 100%;
         z-index: 10;
+        background: white;
         @apply p-4 pt-16;
         @apply transition;
         animation: navFadeIn 0.3s ease-in-out forwards;

@@ -10,8 +10,23 @@ export default function Home () {
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <main>
-        <h1 className='text-3xl font-bold underline'>Hello world!</h1>
+      <main className='relative mt-24 px-4'>
+        <section id='intro'>
+          <div className='flex justify-between mb-4'>
+            <div>
+              <h1 className='text-h1 font-outfit text-ink'>Rob McLoughlin</h1>
+              <span>Product Design @ Chupi &amp; Human</span>
+            </div>
+            <div className='-mt-4'>
+              <Image alt='My face' src='/profile.png' width={64} height={64} />
+            </div>
+          </div>
+          <p>
+            I am a designer and developer from Dublin with 5 years experience
+            defining problems and solving them through data-driven designs and
+            good infastructure.
+          </p>
+        </section>
       </main>
     </div>
   )

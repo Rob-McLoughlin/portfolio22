@@ -1,7 +1,7 @@
 import Nav from '@/components/Nav'
 
 const Standard = ({ children }) => (
-  <main>
+  <main className=''>
     <Nav />
     {children}
   </main>
