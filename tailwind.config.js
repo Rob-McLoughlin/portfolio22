@@ -29,7 +29,8 @@ module.exports = {
         h1: ['24px', '30px'],
         h2: ['24px', '24px'],
         h3: ['24px', '30px'],
-        h4: ['18px', '24px']
+        h4: ['18px', '24px'],
+        meta: ['12px', '16px']
       }
     }
   },

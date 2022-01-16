@@ -1,15 +1,38 @@
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
+import ProjectCard from '@/components/ProjectCard'
 
 const Projects = ({ projects }) => {
+  console.log(projects)
   return (
-    <div className='mt-5'>
-      {projects.map((post, index) => {
-        console.log(post)
-        return <h1>{post.frontMatter.title}</h1>
-      })}
-    </div>
+    <main className='relative mt-24 px-4'>
+      <section id='intro'>
+        <div className='flex justify-between mb-4'>
+          <div>
+            <h1 className='text-h1 font-outfit text-ink'>
+              Projects &amp; Work
+            </h1>
+          </div>
+        </div>
+        <p>
+          I am not permitted to re-display work so I will link to the live
+          project and write up my process on them!
+        </p>
+      </section>
+
+      <section className='mt-6'>
+        <ul>
+          {projects.map(({ slug, frontMatter: project }) => {
+            return (
+              <li key={slug}>
+                <ProjectCard project={project} slug={slug} />
+              </li>
+            )
+          })}
+        </ul>
+      </section>
+    </main>
   )
 }
 
