@@ -4,7 +4,6 @@ import matter from 'gray-matter'
 import ProjectCard from '@/components/ProjectCard'
 
 const Projects = ({ projects }) => {
-  console.log(projects)
   return (
     <main className='relative mt-24 px-4'>
       <section id='intro'>

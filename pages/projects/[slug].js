@@ -4,11 +4,17 @@ import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 
-const PostPage = ({ frontMatter: { title, date }, mdxSource }) => {
+const PostPage = ({ frontMatter, mdxSource }) => {
+  console.log(frontMatter)
   return (
-    <article className='mt-4'>
-      <MDXRemote {...mdxSource} />
-    </article>
+    <main className='relative mt-24 px-4 pb-32'>
+      <article className='mt-4 project-prose'>
+        <MDXRemote {...mdxSource} />
+      </article>
+      <div className='block text-center mt-24'>
+        <span className='font-outfit uppercase opacity-50'>End of Project</span>
+      </div>
+    </main>
   )
 }
 

@@ -124,5 +124,20 @@
         background: white;
     }
 
+    .project-prose {
+        @apply text-ink;
+
+        h1 {
+            @apply text-h1 font-outfit mb-1
+        }
+
+        h2 {
+            @apply text-h2 font-outfit mb-4
+        }
+
+        p {
+            @apply text-body mb-8
+        }
+    }
 
 }
