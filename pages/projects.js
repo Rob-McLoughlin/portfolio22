@@ -51,9 +51,11 @@ export const getStaticProps = async () => {
     }
   })
 
+  const ordered = projects.sort(p => p.frontMatter.order)
+
   return {
     props: {
-      projects
+      projects: ordered
     }
   }
 }
