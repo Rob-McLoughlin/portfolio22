@@ -15,10 +15,12 @@ const Nav = () => {
   const [navOpen, setNavOpen] = useState(false)
 
   return (
-    <header className='fixed top-0 -left-0 w-full bg-white p-4 z-20'>
+    <header className='fixed top-0 -left-0 w-full bg-white z-20'>
       <nav className='flex justify-between'>
         <Link href='/'>
-          <a className='font-outfit z-20'>RM</a>
+          <a className='flex font-outfit z-20 h-14 w-14 items-center justify-center'>
+            RM
+          </a>
         </Link>
         {!desktop.current && (
           <NavButton
