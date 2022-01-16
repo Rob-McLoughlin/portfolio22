@@ -1,7 +1,7 @@
 const NavButton = ({ active, openFunction }) => {
   return (
     <button
-      className={`hamburger-btn ${active && 'active'}`}
+      className={`hamburger-btn z-20 ${active && 'active'}`}
       onClick={openFunction}
     >
       <div className='hamburger-btn__line' />
