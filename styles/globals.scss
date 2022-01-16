@@ -51,10 +51,8 @@
         width: 100%;
         z-index: 10;
         @apply p-4 pt-16;
-        // @apply items-center;
-        // @apply justify-center;
-        // @apply overflow-y-auto;
         @apply transition;
+        animation: navFadeIn 0.3s ease-in-out forwards;
 
         &::before {
             content: "";
@@ -66,21 +64,29 @@
             width: 100%;
             background: url('/gradients/blue-pink.png');
             background-size: 400% 400%;
-            opacity: 0.4;
+            opacity: 0.2;
             animation: gradientMove 5s ease infinite;
         }
 
-        ul {
+        >ul {
             li {
-                @apply my-6;
+                @apply my-3;
+                opacity: 0;
+                animation: navFadeIn 0.3s ease-in-out forwards;
+                animation-delay: 0.2s;
 
                 a {
-                    @apply font-outfit;
-                    @apply py-3;
-                    @apply text-body;
-                    @apply text-ink
+                    @apply flex gap-x-1;
+                    @apply text-body text-ink font-outfit;
+                    @apply py-2;
                 }
             }
+        }
+
+        >.social-nav {
+            opacity: 0;
+            animation: navFadeIn 0.3s ease-in-out forwards;
+            animation-delay: 0.3s;
         }
     }
 
@@ -95,6 +101,16 @@
 
         100% {
             background-position: 61% 0%
+        }
+    }
+
+    @keyframes navFadeIn {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
         }
     }
 

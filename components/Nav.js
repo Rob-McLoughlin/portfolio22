@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import NavButton from '@/components/NavButton'
+import SocialNav from '@/components/SocialNav'
 import { useEffect, useRef, useState } from 'react'
+import { Home, Page, GitHub, Book, Figma } from '@/components/Icons'
 
 const Nav = () => {
   let desktop = useRef(false)
@@ -29,35 +31,58 @@ const Nav = () => {
             <ul>
               <li>
                 <Link href='/'>
-                  <a>Home &amp; About</a>
+                  <a>
+                    <Home />
+                    Home &amp; About
+                  </a>
                 </Link>
               </li>
               <li>
-                <Link href='/'>
-                  <a>Projects &amp; Work</a>
+                <Link href='/projects'>
+                  <a>
+                    <Page />
+                    Projects &amp; Work
+                  </a>
                 </Link>
               </li>
               <li>
-                <Link href='/'>
-                  <a>Design Ideas</a>
+                <Link href='/ideas'>
+                  <a>
+                    {' '}
+                    <Page />
+                    Design Ideas
+                  </a>
                 </Link>
               </li>
               <li>
-                <Link href='/'>
-                  <a>Code</a>
+                <Link href='/code'>
+                  <a>
+                    <GitHub />
+                    Code
+                  </a>
                 </Link>
               </li>
               <li>
-                <Link href='/'>
-                  <a>Books</a>
+                <Link href='/books'>
+                  <a>
+                    <Book />
+                    Books
+                  </a>
                 </Link>
               </li>
               <li>
-                <Link href='/'>
-                  <a>Figma</a>
+                <Link href='/figma'>
+                  <a>
+                    <Figma />
+                    Figma
+                  </a>
                 </Link>
               </li>
             </ul>
+
+            <div className='social-nav absolute flex left-0 w-full bottom-8 justify-center'>
+              <SocialNav />
+            </div>
           </div>
         )}
       </nav>
