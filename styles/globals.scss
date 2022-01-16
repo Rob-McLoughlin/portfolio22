@@ -1,3 +1,45 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .hamburger-btn {
+        display: block;
+        position: relative;
+        @apply h-14 w-14;
+        @apply -mt-4 -mr-4;
+
+        >.hamburger-btn__line {
+            display: block;
+            position: absolute;
+            height: 3px;
+            width: 16px;
+            @apply bg-ink;
+            top: calc(50% - 1px);
+            left: calc(50% - calc(16px / 2));
+            @apply transition;
+
+            &:nth-of-type(1) {
+                transform: translateY(-4px);
+            }
+
+            &:nth-of-type(2) {
+                transform: translateY(4px);
+            }
+        }
+
+        &.active {
+            >.hamburger-btn__line {
+                &:nth-of-type(1) {
+                    transform: translateY(0px) rotate(45deg);
+                }
+
+                &:nth-of-type(2) {
+                    transform: translateY(0px) rotate(-45deg);
+                }
+            }
+        }
+    }
+
+
+}
