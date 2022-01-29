@@ -7,7 +7,7 @@ import { Home, Page, GitHub, Book, Figma } from '@/components/Icons'
 const Nav = () => {
   let desktop = useRef(false)
   useEffect(() => {
-    if (window.innerWidth > 768) {
+    if (window.innerWidth >= 768) {
       desktop.current = true
     }
   }, [])
@@ -16,7 +16,7 @@ const Nav = () => {
 
   return (
     <header className='fixed top-0 -left-0 w-full bg-white z-20'>
-      <nav className='flex justify-between'>
+      <nav className='flex justify-between md:max-w-4xl md:mx-auto'>
         <Link href='/'>
           <a className='flex font-outfit z-20 h-14 w-14 items-center justify-center'>
             RM
