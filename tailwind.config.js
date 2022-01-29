@@ -7,7 +7,8 @@ module.exports = {
     extend: {
       colors: {
         ink: '#140C2C',
-        ink_light: '#343041'
+        ink_light: '#343041',
+        pink: '#DFABB0'
       },
       fontFamily: {
         outfit: ['Outfit', 'Helvetica, sans-serif'],
