@@ -6,6 +6,7 @@ import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 import ProjectCard from '@/components/ProjectCard'
+import QuickLink from '@/components/QuickLink'
 
 export default function Home ({ projects }) {
   return (
@@ -81,50 +82,32 @@ export default function Home ({ projects }) {
             Here are some quick links to jump into my portfolio and get to know
             how I work.
           </p>
-          <Link href='/projects'>
-            <a>
-              <h2 className='py-2 font-outfit flex gap-x-2'>
-                <Page />
-                Projects &amp; Work
-              </h2>
-              <p>
-                Some of my work from Chupi and Human along with some free time
-                projects.
-              </p>
-            </a>
-          </Link>
-          <Link href='/code'>
-            <a>
-              <h2 className='py-2 font-outfit flex gap-x-2'>
-                <GitHub />
-                Code
-              </h2>
-              <p>Code projects, snippets and Github.</p>
-            </a>
-          </Link>
-          <Link href='/books'>
-            <a>
-              <h2 className='py-2 font-outfit flex gap-x-2'>
-                <Book />
-                Books
-              </h2>
-              <p>
-                Some books I’ve read recently and liked. Pulled from my own
-                personal Notion.
-              </p>
-            </a>
-          </Link>
-          <Link href='/figma'>
-            <a>
-              <h2 className='py-2 font-outfit flex gap-x-2'>
-                <Figma />
-                Figma
-              </h2>
-              <p>
-                Figma designs (including this site) and some lessons on GitHub.
-              </p>
-            </a>
-          </Link>
+          <QuickLink
+            icon={<Page />}
+            title='Projects &amp; Work'
+            href='/projects'
+            description='Some of my work from Chupi and Human along with some free time
+                projects.'
+          />
+          <QuickLink
+            icon={<GitHub />}
+            title='Code'
+            href='/code'
+            description='Code projects, snippets and Github.'
+          />
+          <QuickLink
+            icon={<Book />}
+            title='Books'
+            href='/books'
+            description='Some books I’ve read recently and liked. Pulled from my own
+            personal Notion.'
+          />
+          <QuickLink
+            icon={<Figma />}
+            title='Figma'
+            href='/figma'
+            description='Figma designs (including this site) and some lessons on GitHub.'
+          />
         </section>
 
         <section id='projects' className='py-8'>

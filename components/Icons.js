@@ -302,15 +302,15 @@ export const Clock = ({ className }) => (
       d='M12.0309 22C17.5681 22 22.0568 17.5228 22.0568 12C22.0568 6.47715 17.5681 2 12.0309 2C6.49384 2 2.00513 6.47715 2.00513 12C2.00513 17.5228 6.49384 22 12.0309 22Z'
       className='stroke-current'
       strokewidth='2'
-      strokelinecap='round'
-      strokelinejoin='round'
+      strokeLinecap='round'
+      strokeLinejoin='round'
     />
     <path
       d='M12.031 6V12L16.0413 14'
       className='stroke-current'
       strokewidth='2'
-      strokelinecap='round'
-      strokelinejoin='round'
+      strokeLinecap='round'
+      strokeLinejoin='round'
     />
   </svg>
 )
@@ -371,6 +371,32 @@ export const Polywork = ({ className }) => (
       d='M6 2H8.72727V8.72727H2V6C2 3.79086 3.79086 2 6 2Z'
       stroke='currentColor'
       strokeWidth='2'
+    />
+  </svg>
+)
+
+export const RightArrow = ({ className }) => (
+  <svg
+    width='24'
+    height='24'
+    viewBox='0 0 24 24'
+    fill='none'
+    xmlns='http://www.w3.org/2000/svg'
+    className={className}
+  >
+    <path
+      d='M5 12H19'
+      stroke='currentColor'
+      strokeWidth='2'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    />
+    <path
+      d='M12 5L19 12L12 19'
+      stroke='currentColor'
+      strokeWidth='2'
+      strokeLinecap='round'
+      strokeLinejoin='round'
     />
   </svg>
 )

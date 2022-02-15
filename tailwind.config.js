@@ -8,6 +8,7 @@ module.exports = {
       colors: {
         ink: '#140C2C',
         ink_light: '#343041',
+        ink_grey: '#D0CFD2',
         pink: '#DFABB0'
       },
       fontFamily: {
