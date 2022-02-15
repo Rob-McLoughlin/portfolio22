@@ -301,14 +301,14 @@ export const Clock = ({ className }) => (
     <path
       d='M12.0309 22C17.5681 22 22.0568 17.5228 22.0568 12C22.0568 6.47715 17.5681 2 12.0309 2C6.49384 2 2.00513 6.47715 2.00513 12C2.00513 17.5228 6.49384 22 12.0309 22Z'
       className='stroke-current'
-      strokewidth='2'
+      strokeWidth='1'
       strokeLinecap='round'
       strokeLinejoin='round'
     />
     <path
       d='M12.031 6V12L16.0413 14'
       className='stroke-current'
-      strokewidth='2'
+      strokeWidth='1'
       strokeLinecap='round'
       strokeLinejoin='round'
     />
