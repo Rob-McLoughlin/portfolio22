@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import { Degree, Clock } from '@/components/Icons'
 
 export default function Home () {
   return (
@@ -30,7 +31,8 @@ export default function Home () {
             <div className='md:w-1/2'>
               <h2 className='mb-2 font-bold md:hidden'>Experience</h2>
               <ul>
-                <li>
+                <li className='flex gap-x-2 items-center mb-2'>
+                  <Degree />
                   BSc in{' '}
                   <a
                     className='underline'
@@ -42,8 +44,9 @@ export default function Home () {
                   </a>{' '}
                   (1.1)
                 </li>
-                <li>
-                  MSc in{' '}
+                <li className='flex gap-x-2 items-center mb-2'>
+                  <Degree />
+                  MSc in{''}
                   <a
                     className='underline'
                     target='_blank'
@@ -54,7 +57,9 @@ export default function Home () {
                   </a>{' '}
                   (1.1)
                 </li>
-                <li>5 Years Experience</li>
+                <li className='flex gap-x-2 items-center mb-2'>
+                  <Clock />5 Years Experience
+                </li>
               </ul>
             </div>
           </summary>

@@ -205,6 +205,7 @@ export const Figma = ({ className }) => (
     viewBox='0 0 24 24'
     fill='none'
     xmlns='http://www.w3.org/2000/svg'
+    className={className}
   >
     <path
       d='M5 5.5C5 4.57174 5.36875 3.6815 6.02513 3.02513C6.6815 2.36875 7.57174 2 8.5 2H12V9H8.5C7.57174 9 6.6815 8.63125 6.02513 7.97487C5.36875 7.3185 5 6.42826 5 5.5Z'
@@ -240,6 +241,76 @@ export const Figma = ({ className }) => (
       strokeWidth='2'
       strokeLinecap='round'
       strokeLinejoin='round'
+    />
+  </svg>
+)
+
+export const Degree = ({ className }) => (
+  <svg
+    width='25'
+    height='24'
+    viewBox='0 0 25 24'
+    fill='none'
+    xmlns='http://www.w3.org/2000/svg'
+    className={className}
+  >
+    <path
+      d='M13.4139 1.93582H6.39579C5.86399 1.93582 5.35396 2.14654 4.97792 2.52161C4.60188 2.89668 4.39063 3.40539 4.39062 3.93582V19.9358C4.39063 20.4663 4.60188 20.975 4.97792 21.35C5.35396 21.7251 5.86399 21.9358 6.39579 21.9358H18.4268C18.9586 21.9358 19.4686 21.7251 19.8446 21.35C20.2207 20.975 20.4319 20.4663 20.4319 19.9358V8.93582L13.4139 1.93582Z'
+      stroke='#140C2C'
+      strokeWidth='1'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    />
+    <path
+      d='M13.4138 1.93582V8.93582H20.4319'
+      stroke='#140C2C'
+      strokeWidth='1'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    />
+    <path
+      d='M14.4963 18.9358C16.1574 18.9358 17.504 17.5927 17.504 15.9358C17.504 14.279 16.1574 12.9358 14.4963 12.9358C12.8351 12.9358 11.4885 14.279 11.4885 15.9358C11.4885 17.5927 12.8351 18.9358 14.4963 18.9358Z'
+      className='stroke-current'
+      strokeWidth='1'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    />
+    <path
+      d='M12.9765 18.9402L12.4912 22.9358L14.4964 21.62L16.5015 22.9358L16.0163 18.9358'
+      className='fill-current'
+    />
+    <path
+      d='M12.9765 18.9402L12.4912 22.9358L14.4964 21.62L16.5015 22.9358L16.0163 18.9358'
+      stroke='#140C2C'
+      strokeWidth='1'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    />
+  </svg>
+)
+
+export const Clock = ({ className }) => (
+  <svg
+    width='25'
+    height='24'
+    viewBox='0 0 25 24'
+    fill='none'
+    xmlns='http://www.w3.org/2000/svg'
+    className={className}
+  >
+    <path
+      d='M12.0309 22C17.5681 22 22.0568 17.5228 22.0568 12C22.0568 6.47715 17.5681 2 12.0309 2C6.49384 2 2.00513 6.47715 2.00513 12C2.00513 17.5228 6.49384 22 12.0309 22Z'
+      className='stroke-current'
+      strokewidth='2'
+      strokelinecap='round'
+      strokelinejoin='round'
+    />
+    <path
+      d='M12.031 6V12L16.0413 14'
+      className='stroke-current'
+      strokewidth='2'
+      strokelinecap='round'
+      strokelinejoin='round'
     />
   </svg>
 )
