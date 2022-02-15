@@ -1,4 +1,10 @@
-import { Mail, Instagram, Twitter, LinkedIn } from '@/components/Icons'
+import {
+  Mail,
+  Instagram,
+  Twitter,
+  LinkedIn,
+  Polywork
+} from '@/components/Icons'
 import Link from 'next/link'
 
 const socialNav = ({ condensed }) => {
@@ -30,6 +36,13 @@ const socialNav = ({ condensed }) => {
           <Link href='https://www.linkedin.com/in/robmcloughlin-ux/'>
             <a>
               <LinkedIn />
+            </a>
+          </Link>
+        </li>
+        <li>
+          <Link href='https://www.polywork.com/robmcloughlin'>
+            <a>
+              <Polywork />
             </a>
           </Link>
         </li>

@@ -314,3 +314,63 @@ export const Clock = ({ className }) => (
     />
   </svg>
 )
+
+export const Polywork = ({ className }) => (
+  <svg
+    width='24'
+    height='24'
+    viewBox='0 0 24 24'
+    fill='none'
+    xmlns='http://www.w3.org/2000/svg'
+  >
+    <rect
+      x='8.72729'
+      y='8.72729'
+      width='6.72727'
+      height='6.72727'
+      stroke='currentColor'
+      strokeWidth='2'
+    />
+    <path
+      d='M8.72729 15.4546H15.4546V18.1819C15.4546 20.391 13.6637 22.1819 11.4546 22.1819H8.72729V15.4546Z'
+      stroke='currentColor'
+      strokeWidth='2'
+    />
+    <rect
+      x='8.72729'
+      y='2'
+      width='6.72727'
+      height='6.72727'
+      stroke='currentColor'
+      strokeWidth='2'
+    />
+    <path
+      d='M15.4546 8.72729H22.1819V11.4546C22.1819 13.6637 20.391 15.4546 18.1819 15.4546H15.4546V8.72729Z'
+      stroke='currentColor'
+      strokeWidth='2'
+    />
+    <path
+      d='M15.4546 2H18.1819C20.391 2 22.1819 3.79086 22.1819 6V8.72727H15.4546V2Z'
+      stroke='currentColor'
+      strokeWidth='2'
+    />
+    <rect
+      x='2'
+      y='8.72729'
+      width='6.72727'
+      height='6.72727'
+      stroke='currentColor'
+      strokeWidth='2'
+    />
+    <path
+      d='M2 15.4546H8.72727V22.1819H6C3.79086 22.1819 2 20.391 2 18.1819V15.4546Z'
+      stroke='currentColor'
+      strokeWidth='2'
+    />
+    <path
+      d='M6 2H8.72727V8.72727H2V6C2 3.79086 3.79086 2 6 2Z'
+      stroke='currentColor'
+      strokeWidth='2'
+    />
+  </svg>
+)
