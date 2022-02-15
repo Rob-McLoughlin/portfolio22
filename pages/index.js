@@ -1,8 +1,12 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import { Degree, Clock } from '@/components/Icons'
+import fs from 'fs'
+import path from 'path'
+import matter from 'gray-matter'
+import ProjectCard from '@/components/ProjectCard'
 
-export default function Home () {
+export default function Home ({ projects }) {
   return (
     <div>
       <Head>
@@ -64,7 +68,49 @@ export default function Home () {
             </div>
           </summary>
         </section>
+
+        <section id='projects' className='py-12'>
+          <h2 className='mb-4 font-outfit test-ink text-h1'>Recent Projects</h2>
+          <p>
+            I am not permitted to re-display work so I will link to the live
+            project and write up my process on them!
+          </p>
+          <ul>
+            {projects.map(({ slug, frontMatter: project }) => {
+              return (
+                <li key={slug}>
+                  <ProjectCard project={project} slug={slug} />
+                </li>
+              )
+            })}
+          </ul>
+        </section>
       </main>
     </div>
   )
+}
+
+export const getStaticProps = async () => {
+  const files = fs.readdirSync(path.join('projects'))
+
+  const projects = files.map(filename => {
+    const markdownWithMeta = fs.readFileSync(
+      path.join('projects', filename),
+      'utf-8'
+    )
+    const { data: frontMatter } = matter(markdownWithMeta)
+
+    return {
+      frontMatter,
+      slug: filename.split('.')[0]
+    }
+  })
+
+  const ordered = projects.sort(p => p.frontMatter.order).slice(0, 2)
+
+  return {
+    props: {
+      projects: ordered
+    }
+  }
 }
