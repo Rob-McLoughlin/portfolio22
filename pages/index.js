@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import { Degree, Clock } from '@/components/Icons'
+import Link from 'next/link'
+import { Degree, Clock, Page, GitHub, Book, Figma } from '@/components/Icons'
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
@@ -69,13 +70,72 @@ export default function Home ({ projects }) {
           </summary>
         </section>
 
-        <section id='projects' className='py-12'>
-          <h2 className='mb-4 font-outfit test-ink text-h1'>Recent Projects</h2>
-          <p>
+        <section
+          id='jump-off'
+          className='py-8 flex flex-col gap-6 md:grid md:grid-cols-2'
+        >
+          <h2 className='-mb-2 font-outfit text-ink text-h1 md:col-span-2'>
+            🚀 Jump Off
+          </h2>
+          <p className='-mb-2 text-ink md:col-span-2 md:w-1/2'>
+            Here are some quick links to jump into my portfolio and get to know
+            how I work.
+          </p>
+          <Link href='/projects'>
+            <a>
+              <h2 className='py-2 font-outfit flex gap-x-2'>
+                <Page />
+                Projects &amp; Work
+              </h2>
+              <p>
+                Some of my work from Chupi and Human along with some free time
+                projects.
+              </p>
+            </a>
+          </Link>
+          <Link href='/code'>
+            <a>
+              <h2 className='py-2 font-outfit flex gap-x-2'>
+                <GitHub />
+                Code
+              </h2>
+              <p>Code projects, snippets and Github.</p>
+            </a>
+          </Link>
+          <Link href='/books'>
+            <a>
+              <h2 className='py-2 font-outfit flex gap-x-2'>
+                <Book />
+                Books
+              </h2>
+              <p>
+                Some books I’ve read recently and liked. Pulled from my own
+                personal Notion.
+              </p>
+            </a>
+          </Link>
+          <Link href='/figma'>
+            <a>
+              <h2 className='py-2 font-outfit flex gap-x-2'>
+                <Figma />
+                Figma
+              </h2>
+              <p>
+                Figma designs (including this site) and some lessons on GitHub.
+              </p>
+            </a>
+          </Link>
+        </section>
+
+        <section id='projects' className='py-8'>
+          <h2 className='mb-4 font-outfit text-ink text-h1'>
+            📦 Recent Projects
+          </h2>
+          <p className='md:w-1/2'>
             I am not permitted to re-display work so I will link to the live
             project and write up my process on them!
           </p>
-          <ul>
+          <ul className='md:grid md:grid-cols-2 gap-x-6'>
             {projects.map(({ slug, frontMatter: project }) => {
               return (
                 <li key={slug}>

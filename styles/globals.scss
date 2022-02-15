@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+    @apply text-ink
+}
+
 @layer components {
     .hamburger-btn {
         display: block;
