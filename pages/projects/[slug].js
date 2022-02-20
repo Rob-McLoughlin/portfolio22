@@ -3,16 +3,21 @@ import { MDXRemote } from 'next-mdx-remote'
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
+import Link from 'next/link'
 
 const PostPage = ({ frontMatter, mdxSource }) => {
-  console.log(frontMatter)
   return (
-    <main className='mx-auto relative mt-24 px-4 max-w-3xl'>
-      <article className='max-w-xl mx-auto project-prose'>
+    <main className='mx-auto relative mt-24 px-4 max-w-xl'>
+      <Link href='/projects'>
+        <a className='underline'>Projects /</a>
+      </Link>
+      <article className='project-prose'>
         <MDXRemote {...mdxSource} />
       </article>
-      <div className='block text-center mt-24'>
-        <span className='font-outfit uppercase opacity-50'>End of Project</span>
+      <div className='block text-center my-16'>
+        <Link href='/projects'>
+          <a className='underline'>View All Projects</a>
+        </Link>
       </div>
     </main>
   )
