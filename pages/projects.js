@@ -5,7 +5,7 @@ import ProjectCard from '@/components/ProjectCard'
 
 const Projects = ({ projects }) => {
   return (
-    <main className='relative mt-24 px-4'>
+    <main className='mx-auto relative mt-24 px-4 max-w-3xl'>
       <section id='intro'>
         <div className='flex justify-between mb-4'>
           <div>
@@ -21,7 +21,7 @@ const Projects = ({ projects }) => {
       </section>
 
       <section className='mt-6'>
-        <ul>
+        <ul className='md:grid md:grid-cols-2 gap-x-6'>
           {projects.map(({ slug, frontMatter: project }) => {
             return (
               <li key={slug}>
