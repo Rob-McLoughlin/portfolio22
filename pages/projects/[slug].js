@@ -7,8 +7,8 @@ import matter from 'gray-matter'
 const PostPage = ({ frontMatter, mdxSource }) => {
   console.log(frontMatter)
   return (
-    <main className='relative mt-24 px-4 pb-32'>
-      <article className='mt-4 project-prose'>
+    <main className='mx-auto relative mt-24 px-4 max-w-3xl'>
+      <article className='max-w-xl mx-auto project-prose'>
         <MDXRemote {...mdxSource} />
       </article>
       <div className='block text-center mt-24'>
