@@ -3,7 +3,7 @@ import { getReadBooks } from '@/lib/notion'
 
 const Books = ({ books }) => {
   return (
-    <main className='relative mt-24 px-4'>
+    <main className='mx-auto relative mt-24 px-4 max-w-3xl'>
       <section id='intro'>
         <div className='mb-4 flex justify-between'>
           <div>
@@ -18,7 +18,7 @@ const Books = ({ books }) => {
       </section>
 
       <section className='mt-6'>
-        <ul className='flex flex-wrap justify-center gap-4'>
+        <ul className='flex flex-col gap-6 md:grid md:grid-cols-2'>
           {books.map(book => {
             const titleKey = book.title
               .toLowerCase()
