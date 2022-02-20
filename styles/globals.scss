@@ -168,6 +168,51 @@ html {
         border-radius: 8px;
         box-shadow: 0px 4px 4px #EFE3ED;
         background: white;
+        transition: box-shadow 0.1s ease-out, border-color 0.4s ease-out;
+
+        .hover-arrow {
+            position: absolute;
+            @apply top-4;
+            @apply right-4;
+            opacity: 0;
+            transform: translateY(4px) rotate(45deg);
+            transition: all 0.4s cubic-bezier(0, .71, .44, 1.4);
+        }
+
+        span:nth-of-type(2) {
+            transition: all 0.4s cubic-bezier(0, .71, .44, 1.4);
+        }
+
+        &:hover {
+            border-color: #E16CBE !important;
+            box-shadow: 0px 0px 0px #EFE3ED;
+
+            span:first-of-type {
+                background: url('/gradients/blue-pink.png');
+                background-size: 100%;
+                -webkit-background-clip: text;
+                -moz-background-clip: text;
+                background-clip: text;
+                color: transparent;
+                animation: gradientMove 2s ease infinite;
+                transition: all 0.4s ease-out;
+            }
+
+            span:nth-of-type(2) {
+                opacity: 0;
+                transform: translateY(4px);
+            }
+
+            .hover-arrow {
+                opacity: 1;
+                transform: translateY(0px) rotate(0deg);
+
+                path {
+                    transition: all 0.4s ease-out;
+                    stroke: #C85CE7;
+                }
+            }
+        }
     }
 
     .project-prose {

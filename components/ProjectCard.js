@@ -1,5 +1,5 @@
 import Link from 'next/link'
-
+import { RightArrow } from '@/components/Icons'
 const colors = [
   '#3683AC',
   '#9EBFA8',
@@ -21,6 +21,7 @@ const ProjectCard = ({ project, slug }) => {
         >
           <div className='flex justify-between items-center gap-x-4 font-outfit mb-2'>
             <span>{project.title}</span>
+            <RightArrow className='hover-arrow' />
             <span className='uppercase text-meta'>at {project.at}</span>
           </div>
           <p>{project.description}</p>
