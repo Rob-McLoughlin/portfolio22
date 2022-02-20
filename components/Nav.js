@@ -15,7 +15,10 @@ const Nav = () => {
   }, [])
 
   return (
-    <header className='fixed top-0 -left-0 w-full bg-white bg-opacity-90 z-20 backdrop-filter backdrop-blur-md '>
+    <header
+      className={`fixed top-0 -left-0 w-full bg-white bg-opacity-90 z-20 backdrop-filter backdrop-blur-md ${navOpen &&
+        'h-full'}`}
+    >
       <nav className='flex justify-between md:max-w-4xl md:mx-auto'>
         <Link href='/'>
           <a className='flex font-outfit z-20 h-14 w-14 items-center justify-center'>
