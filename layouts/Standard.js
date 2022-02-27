@@ -2,11 +2,11 @@ import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 
 const Standard = ({ children }) => (
-  <main className=''>
+  <div>
     <Nav />
-    {children}
+    <main className='standard'>{children}</main>
     <Footer />
-  </main>
+  </div>
 )
 
 export default Standard

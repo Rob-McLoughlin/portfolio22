@@ -6,6 +6,13 @@ html {
     @apply text-ink
 }
 
+@layer base {
+    main.standard {
+        @apply min-h-screen;
+        @apply mx-auto relative mt-24 px-4 max-w-3xl;
+    }
+}
+
 @layer components {
     .hamburger-btn {
         display: block;
@@ -275,4 +282,11 @@ html {
         }
     }
 
+}
+
+@layer utilities {
+    .height-full {
+        background: yellow;
+        height: 70vh;
+    }
 }

@@ -5,7 +5,7 @@ import ProjectCard from '@/components/ProjectCard'
 
 const Projects = ({ projects }) => {
   return (
-    <main className='mx-auto relative mt-24 px-4 max-w-3xl'>
+    <div>
       <section id='intro'>
         <div className='flex justify-between mb-4'>
           <div>
@@ -31,7 +31,7 @@ const Projects = ({ projects }) => {
           })}
         </ul>
       </section>
-    </main>
+    </div>
   )
 }
 

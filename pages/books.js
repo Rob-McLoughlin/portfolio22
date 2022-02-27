@@ -3,7 +3,7 @@ import { getReadBooks } from '@/lib/notion'
 
 const Books = ({ books }) => {
   return (
-    <main className='mx-auto relative mt-24 px-4 max-w-3xl'>
+    <div>
       <section id='intro'>
         <div className='mb-4 flex justify-between'>
           <div>
@@ -32,7 +32,7 @@ const Books = ({ books }) => {
           })}
         </ul>
       </section>
-    </main>
+    </div>
   )
 }
 

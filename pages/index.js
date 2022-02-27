@@ -17,118 +17,116 @@ export default function Home ({ projects }) {
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <main className='mx-auto relative mt-24 px-4 max-w-3xl'>
-        <section id='intro'>
-          <div className='mb-4 flex justify-between md:flex-row-reverse md:justify-end md:items-center md:gap-x-4'>
-            <div>
-              <h1 className='font-outfit text-h1 text-ink'>Rob McLoughlin</h1>
-              <span>Product Design @ Chupi &amp; Human</span>
-            </div>
-            <div className='-mt-4 md:mt-0'>
-              <Image alt='My face' src='/profile.png' width={64} height={64} />
-            </div>
+      <section id='intro'>
+        <div className='mb-4 flex justify-between md:flex-row-reverse md:justify-end md:items-center md:gap-x-4'>
+          <div>
+            <h1 className='font-outfit text-h1 text-ink'>Rob McLoughlin</h1>
+            <span>Product Design @ Chupi &amp; Human</span>
           </div>
-          <summary className='block md:flex md:gap-x-6'>
-            <p className='mb-4 md:w-1/2'>
-              I am a designer and developer from Dublin with 5 years experience
-              defining problems and solving them through data-driven designs and
-              good infastructure.
-            </p>
-            <div className='md:w-1/2'>
-              <h2 className='mb-2 font-bold md:hidden'>Experience</h2>
-              <ul>
-                <li className='flex gap-x-2 items-center mb-2'>
-                  <Degree />
-                  BSc in{' '}
-                  <a
-                    className='underline'
-                    target='_blank'
-                    rel='noreferrer'
-                    href='https://iadt.ie/courses/applied-psychology/'
-                  >
-                    Applied Psychology
-                  </a>{' '}
-                  (1.1)
-                </li>
-                <li className='flex gap-x-2 items-center mb-2'>
-                  <Degree />
-                  MSc in{''}
-                  <a
-                    className='underline'
-                    target='_blank'
-                    rel='noreferrer'
-                    href='https://iadt.ie/courses/user-experience-design/'
-                  >
-                    UX Design
-                  </a>{' '}
-                  (1.1)
-                </li>
-                <li className='flex gap-x-2 items-center mb-2'>
-                  <Clock />5 Years Experience
-                </li>
-              </ul>
-            </div>
-          </summary>
-        </section>
-
-        <section
-          id='jump-off'
-          className='py-8 flex flex-col gap-6 md:grid md:grid-cols-2'
-        >
-          <h2 className='-mb-2 font-outfit text-ink text-h1 md:col-span-2'>
-            🚀 Jump Off
-          </h2>
-          <p className='-mb-2 text-ink md:col-span-2 md:w-1/2'>
-            Here are some quick links to jump into my portfolio and get to know
-            how I work.
+          <div className='-mt-4 md:mt-0'>
+            <Image alt='My face' src='/profile.png' width={64} height={64} />
+          </div>
+        </div>
+        <summary className='block md:flex md:gap-x-6'>
+          <p className='mb-4 md:w-1/2'>
+            I am a designer and developer from Dublin with 5 years experience
+            defining problems and solving them through data-driven designs and
+            good infastructure.
           </p>
-          <QuickLink
-            icon={<Page />}
-            title='Projects &amp; Work'
-            href='/projects'
-            description='Some of my work from Chupi and Human along with some free time
+          <div className='md:w-1/2'>
+            <h2 className='mb-2 font-bold md:hidden'>Experience</h2>
+            <ul>
+              <li className='flex gap-x-2 items-center mb-2'>
+                <Degree />
+                BSc in{' '}
+                <a
+                  className='underline'
+                  target='_blank'
+                  rel='noreferrer'
+                  href='https://iadt.ie/courses/applied-psychology/'
+                >
+                  Applied Psychology
+                </a>{' '}
+                (1.1)
+              </li>
+              <li className='flex gap-x-2 items-center mb-2'>
+                <Degree />
+                MSc in{''}
+                <a
+                  className='underline'
+                  target='_blank'
+                  rel='noreferrer'
+                  href='https://iadt.ie/courses/user-experience-design/'
+                >
+                  UX Design
+                </a>{' '}
+                (1.1)
+              </li>
+              <li className='flex gap-x-2 items-center mb-2'>
+                <Clock />5 Years Experience
+              </li>
+            </ul>
+          </div>
+        </summary>
+      </section>
+
+      <section
+        id='jump-off'
+        className='py-8 flex flex-col gap-6 md:grid md:grid-cols-2'
+      >
+        <h2 className='-mb-2 font-outfit text-ink text-h1 md:col-span-2'>
+          🚀 Jump Off
+        </h2>
+        <p className='-mb-2 text-ink md:col-span-2 md:w-1/2'>
+          Here are some quick links to jump into my portfolio and get to know
+          how I work.
+        </p>
+        <QuickLink
+          icon={<Page />}
+          title='Projects &amp; Work'
+          href='/projects'
+          description='Some of my work from Chupi and Human along with some free time
                 projects.'
-          />
-          <QuickLink
-            icon={<GitHub />}
-            title='Code'
-            href='/code'
-            description='Code projects, snippets and Github.'
-          />
-          <QuickLink
-            icon={<Book />}
-            title='Books'
-            href='/books'
-            description='Some books I’ve read recently and liked. Pulled from my own
+        />
+        <QuickLink
+          icon={<GitHub />}
+          title='Code'
+          href='/code'
+          description='Code projects, snippets and Github.'
+        />
+        <QuickLink
+          icon={<Book />}
+          title='Books'
+          href='/books'
+          description='Some books I’ve read recently and liked. Pulled from my own
             personal Notion.'
-          />
-          <QuickLink
-            icon={<Figma />}
-            title='Figma'
-            href='/figma'
-            description='Figma designs (including this site) and some lessons on GitHub.'
-          />
-        </section>
+        />
+        <QuickLink
+          icon={<Figma />}
+          title='Figma'
+          href='/figma'
+          description='Figma designs (including this site) and some lessons on GitHub.'
+        />
+      </section>
 
-        <section id='projects' className='py-8'>
-          <h2 className='mb-4 font-outfit text-ink text-h1'>
-            📦 Recent Projects
-          </h2>
-          <p className='md:w-1/2'>
-            I am not permitted to re-display work so I will link to the live
-            project and write up my process on them!
-          </p>
-          <ul className='md:grid md:grid-cols-2 gap-x-6'>
-            {projects.map(({ slug, frontMatter: project }) => {
-              return (
-                <li key={slug}>
-                  <ProjectCard project={project} slug={slug} />
-                </li>
-              )
-            })}
-          </ul>
-        </section>
-      </main>
+      <section id='projects' className='py-8'>
+        <h2 className='mb-4 font-outfit text-ink text-h1'>
+          📦 Recent Projects
+        </h2>
+        <p className='md:w-1/2'>
+          I am not permitted to re-display work so I will link to the live
+          project and write up my process on them!
+        </p>
+        <ul className='md:grid md:grid-cols-2 gap-x-6'>
+          {projects.map(({ slug, frontMatter: project }) => {
+            return (
+              <li key={slug}>
+                <ProjectCard project={project} slug={slug} />
+              </li>
+            )
+          })}
+        </ul>
+      </section>
     </div>
   )
 }
