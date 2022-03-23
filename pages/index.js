@@ -1,12 +1,12 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Degree, Clock, Page, GitHub, Book, Figma } from '@/components/Icons'
+import { Degree, Clock, Page, GitHub, Book, Figma } from '@/atoms/Icon'
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
-import ProjectCard from '@/components/ProjectCard'
-import QuickLink from '@/components/QuickLink'
+import ProjectCard from '@/atoms/ProjectCard'
+import QuickLink from '@/molecules/QuickLink'
 
 export default function Home ({ projects }) {
   return (

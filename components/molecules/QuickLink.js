@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { RightArrow } from '@/components/Icons'
+import { RightArrow } from '@/atoms/Icon'
 
 const QuickLink = ({ icon, title, href, description }) => {
   return (

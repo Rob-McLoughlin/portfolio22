@@ -1,7 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
-import ProjectCard from '@/components/ProjectCard'
+import ProjectCard from '@/atoms/ProjectCard'
 
 const Projects = ({ projects }) => {
   return (

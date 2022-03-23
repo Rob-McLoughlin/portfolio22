@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { RightArrow } from '@/components/Icons'
+import { RightArrow } from '@/atoms/Icon'
 const colors = [
   '#3683AC',
   '#9EBFA8',
