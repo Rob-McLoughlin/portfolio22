@@ -1,5 +1,5 @@
-import Nav from '@/components/Nav'
-import Footer from '@/components/Footer'
+import Nav from '@/organisms/Nav'
+import Footer from '@/organisms/Footer'
 
 const Standard = ({ children }) => (
   <div>

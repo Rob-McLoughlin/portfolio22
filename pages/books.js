@@ -1,4 +1,4 @@
-import BookCard from '@/components/BookCard'
+import BookCard from '@/atoms/BookCard'
 import { getReadBooks } from '@/lib/notion'
 
 const Books = ({ books }) => {

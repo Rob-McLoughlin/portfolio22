@@ -1,10 +1,4 @@
-import {
-  Mail,
-  Instagram,
-  Twitter,
-  LinkedIn,
-  Polywork
-} from '@/components/Icons'
+import { Mail, Instagram, Twitter, LinkedIn, Polywork } from '@/atoms/Icon'
 import Link from 'next/link'
 
 const socialNav = ({ condensed }) => {

@@ -1,5 +1,5 @@
 import '@/styles/globals.scss'
-import Standard from '@/layouts/Standard'
+import Standard from '@/templates/Standard'
 
 function MyApp ({ Component, pageProps }) {
   return (

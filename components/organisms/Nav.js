@@ -1,8 +1,8 @@
 import Link from 'next/link'
-import NavButton from '@/components/NavButton'
-import SocialNav from '@/components/SocialNav'
+import NavButton from '@/atoms/NavButton'
+import SocialNav from '@/molecules/SocialNav'
 import { useEffect, useRef, useState } from 'react'
-import { Home, Page, GitHub, Book, Figma } from '@/components/Icons'
+import { Home, Page, GitHub, Book, Figma } from '@/atoms/Icon'
 
 const Nav = () => {
   const [desktop, setDesktop] = useState(false)

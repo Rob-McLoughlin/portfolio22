@@ -10,8 +10,8 @@ import {
   Twitter,
   LinkedIn,
   Polywork
-} from '@/components/Icons'
-import SocialNav from '@/components/SocialNav'
+} from '@/atoms/Icon'
+import SocialNav from '@/molecules/SocialNav'
 import { useEffect, useState } from 'react'
 
 const Footer = () => {
