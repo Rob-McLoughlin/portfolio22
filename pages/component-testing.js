@@ -1,5 +1,6 @@
 import Card from '@/molecules/Card'
 import Input from '@/atoms/Input'
+import Button from '@/atoms/Button'
 import { Box, RightArrow } from '@/atoms/Icon'
 const CompontentTesting = ({}) => {
   return (
@@ -15,6 +16,12 @@ const CompontentTesting = ({}) => {
         placeholder='Enter Key'
         suffixIcon={<RightArrow />}
         iconClickFn={() => console.log('click')}
+      />
+      <Button
+        label='Button'
+        ghost={true}
+        prefixIcon={<Box />}
+        onClick={() => console.log('click')}
       />
     </section>
   )
