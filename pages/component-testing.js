@@ -1,5 +1,6 @@
 import Card from '@/molecules/Card'
-import { Box } from '@/atoms/Icon'
+import Input from '@/atoms/Input'
+import { Box, RightArrow } from '@/atoms/Icon'
 const CompontentTesting = ({}) => {
   return (
     <section>
@@ -9,6 +10,11 @@ const CompontentTesting = ({}) => {
         body='Card body'
         location='Side Project'
         icon={<Box />}
+      />
+      <Input
+        placeholder='Enter Key'
+        suffixIcon={<RightArrow />}
+        iconClickFn={() => console.log('click')}
       />
     </section>
   )
