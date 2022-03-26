@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Degree, Clock, Page, GitHub, Book, Figma } from '@/atoms/Icon'
+import { Degree, Clock, Box, GitHub, Book, Figma } from '@/atoms/Icon'
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
@@ -82,7 +82,7 @@ export default function Home ({ projects }) {
           how I work.
         </p>
         <QuickLink
-          icon={<Page />}
+          icon={<Box />}
           title='Projects &amp; Work'
           href='/projects'
           description='Some of my work from Chupi and Human along with some free time

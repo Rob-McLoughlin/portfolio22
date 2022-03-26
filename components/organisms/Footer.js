@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import {
   Home,
-  Page,
+  Box,
   GitHub,
   Book,
   Figma,
@@ -37,7 +37,7 @@ const Footer = () => {
           <li>
             <Link href='/projects'>
               <a className='flex gap-x-1 py-2'>
-                <Page />
+                <Box />
                 Projects
               </a>
             </Link>
@@ -45,7 +45,7 @@ const Footer = () => {
           <li>
             <Link href='/ideas'>
               <a className='flex gap-x-1 py-2'>
-                <Page />
+                <Box />
                 Ideas
               </a>
             </Link>

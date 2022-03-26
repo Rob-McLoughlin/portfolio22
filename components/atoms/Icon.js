@@ -123,24 +123,72 @@ export const Home = ({ className }) => (
   </svg>
 )
 
-export const Page = ({ className }) => (
+export const Box = ({ className }) => (
   <svg
     width='24'
     height='24'
     viewBox='0 0 24 24'
     fill='none'
     xmlns='http://www.w3.org/2000/svg'
+    className={className}
   >
     <path
-      d='M13 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V9L13 2Z'
-      className='stroke-current'
+      d='M16.5 9.39996L7.5 4.20996'
+      stroke='currentColor'
       strokeWidth='2'
       strokeLinecap='round'
       strokeLinejoin='round'
     />
     <path
-      d='M13 2V9H20'
-      className='stroke-current'
+      d='M21 16V8.00002C20.9996 7.6493 20.9071 7.30483 20.7315 7.00119C20.556 6.69754 20.3037 6.44539 20 6.27002L13 2.27002C12.696 2.09449 12.3511 2.00208 12 2.00208C11.6489 2.00208 11.304 2.09449 11 2.27002L4 6.27002C3.69626 6.44539 3.44398 6.69754 3.26846 7.00119C3.09294 7.30483 3.00036 7.6493 3 8.00002V16C3.00036 16.3508 3.09294 16.6952 3.26846 16.9989C3.44398 17.3025 3.69626 17.5547 4 17.73L11 21.73C11.304 21.9056 11.6489 21.998 12 21.998C12.3511 21.998 12.696 21.9056 13 21.73L20 17.73C20.3037 17.5547 20.556 17.3025 20.7315 16.9989C20.9071 16.6952 20.9996 16.3508 21 16Z'
+      stroke='currentColor'
+      strokeWidth='2'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    />
+    <path
+      d='M3.27002 6.95996L12 12.01L20.73 6.95996'
+      stroke='currentColor'
+      strokeWidth='2'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    />
+    <path
+      d='M12 22.08V12'
+      stroke='currentColor'
+      strokeWidth='2'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    />
+  </svg>
+)
+
+export const Cube = ({ className }) => (
+  <svg
+    width='24'
+    height='24'
+    viewBox='0 0 24 24'
+    fill='none'
+    xmlns='http://www.w3.org/2000/svg'
+    className={className}
+  >
+    <path
+      d='M21 16V8.00002C20.9996 7.6493 20.9071 7.30483 20.7315 7.00119C20.556 6.69754 20.3037 6.44539 20 6.27002L13 2.27002C12.696 2.09449 12.3511 2.00208 12 2.00208C11.6489 2.00208 11.304 2.09449 11 2.27002L4 6.27002C3.69626 6.44539 3.44398 6.69754 3.26846 7.00119C3.09294 7.30483 3.00036 7.6493 3 8.00002V16C3.00036 16.3508 3.09294 16.6952 3.26846 16.9989C3.44398 17.3025 3.69626 17.5547 4 17.73L11 21.73C11.304 21.9056 11.6489 21.998 12 21.998C12.3511 21.998 12.696 21.9056 13 21.73L20 17.73C20.3037 17.5547 20.556 17.3025 20.7315 16.9989C20.9071 16.6952 20.9996 16.3508 21 16Z'
+      stroke='currentColor'
+      strokeWidth='2'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    />
+    <path
+      d='M3.27002 6.95996L12 12.01L20.73 6.95996'
+      stroke='currentColor'
+      strokeWidth='2'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    />
+    <path
+      d='M12 22.08V12'
+      stroke='currentColor'
       strokeWidth='2'
       strokeLinecap='round'
       strokeLinejoin='round'
@@ -180,6 +228,7 @@ export const Book = ({ className }) => (
     viewBox='0 0 24 24'
     fill='none'
     xmlns='http://www.w3.org/2000/svg'
+    className={className}
   >
     <path
       d='M4 19.5C4 18.837 4.26339 18.2011 4.73223 17.7322C5.20107 17.2634 5.83696 17 6.5 17H20'
@@ -256,14 +305,14 @@ export const Degree = ({ className }) => (
   >
     <path
       d='M13.4139 1.93582H6.39579C5.86399 1.93582 5.35396 2.14654 4.97792 2.52161C4.60188 2.89668 4.39063 3.40539 4.39062 3.93582V19.9358C4.39063 20.4663 4.60188 20.975 4.97792 21.35C5.35396 21.7251 5.86399 21.9358 6.39579 21.9358H18.4268C18.9586 21.9358 19.4686 21.7251 19.8446 21.35C20.2207 20.975 20.4319 20.4663 20.4319 19.9358V8.93582L13.4139 1.93582Z'
-      stroke='#140C2C'
+      stroke='currentColor'
       strokeWidth='1'
       strokeLinecap='round'
       strokeLinejoin='round'
     />
     <path
       d='M13.4138 1.93582V8.93582H20.4319'
-      stroke='#140C2C'
+      stroke='currentColor'
       strokeWidth='1'
       strokeLinecap='round'
       strokeLinejoin='round'
@@ -281,7 +330,7 @@ export const Degree = ({ className }) => (
     />
     <path
       d='M12.9765 18.9402L12.4912 22.9358L14.4964 21.62L16.5015 22.9358L16.0163 18.9358'
-      stroke='#140C2C'
+      stroke='currentColor'
       strokeWidth='1'
       strokeLinecap='round'
       strokeLinejoin='round'
@@ -393,6 +442,32 @@ export const RightArrow = ({ className }) => (
     />
     <path
       d='M12 5L19 12L12 19'
+      stroke='currentColor'
+      strokeWidth='2'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    />
+  </svg>
+)
+
+export const Close = ({ className }) => (
+  <svg
+    width='24'
+    height='24'
+    viewBox='0 0 24 24'
+    fill='none'
+    xmlns='http://www.w3.org/2000/svg'
+    className={className}
+  >
+    <path
+      d='M18 6L6 18'
+      stroke='currentColor'
+      strokeWidth='2'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    />
+    <path
+      d='M6 6L18 18'
       stroke='currentColor'
       strokeWidth='2'
       strokeLinecap='round'
