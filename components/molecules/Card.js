@@ -17,10 +17,15 @@ const Card = ({ title, subtitle, body, location, icon, href }) => {
             </span>
           )}
         </div>
-        <span className='text-meta font-outfit uppercase ml-auto transition group-hover:translate-y-4 group-hover:opacity-0'>
+        <span
+          className={`text-meta font-outfit uppercase ml-auto transition ${destination &&
+            'group-hover:translate-y-4 group-hover:opacity-0'}`}
+        >
           {location}
         </span>
-        <RightArrow className='absolute right-0 text-flamingo translate-y-4 rotate-45 transition opacity-0 group-hover:translate-y-0 group-hover:rotate-0 group-hover:opacity-100' />
+        {destination && (
+          <RightArrow className='absolute right-0 text-flamingo translate-y-4 rotate-45 transition opacity-0 group-hover:translate-y-0 group-hover:rotate-0 group-hover:opacity-100' />
+        )}
       </div>
       <summary className='block mt-2 text-ink'>{body}</summary>
     </div>
