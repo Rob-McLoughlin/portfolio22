@@ -16,7 +16,7 @@ const Input = ({ placeholder, prefixIcon, suffixIcon, iconClickFn }) => {
       )}
 
       <input
-        className={`w-full px-4 py-3 border border-ink rounded-lg font-body ${suffixIcon &&
+        className={`w-full px-4 py-3 border border-ink rounded-lg font-inter ${suffixIcon &&
           'pr-2'} ${prefixIcon && 'pl-12'}`}
         type='text'
         placeholder={placeholder}
