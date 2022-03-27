@@ -10,7 +10,9 @@ module.exports = {
         ink_light: '#343041',
         ink_grey: '#D0CFD2',
         pink: '#DFABB0',
-        flamingo: '#D97693'
+        flamingo: '#D97693',
+        error: '#AE2A2A',
+        success: '#059502'
       },
       fontFamily: {
         outfit: ['Outfit', 'Helvetica, sans-serif'],

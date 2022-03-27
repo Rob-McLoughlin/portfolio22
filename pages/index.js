@@ -106,11 +106,9 @@ export const getServerSideProps = async context => {
   const session = await getSession(context)
   if (!session) {
     const captureToken = await exchangeParamForToken(context)
-    console.log('captureToken', captureToken)
     if (!captureToken) {
       return redirect
     }
-    // console.log(captureToken)
     context.res.setHeader('set-cookie', [
       `access-token=${captureToken}; HttpOnly; Max-Age=86400; Path=/`
     ])

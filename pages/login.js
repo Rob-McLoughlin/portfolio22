@@ -1,33 +1,78 @@
 import Input from '@/atoms/Input'
-import { Box, RightArrow } from '@/atoms/Icon'
-import { useEffect, useRef } from 'react'
+import { Check, Warning, RightArrow } from '@/atoms/Icon'
+import { useState, useRef } from 'react'
+import { useRouter } from 'next/router'
 
 const Login = ({}) => {
+  const router = useRouter()
   const inputRef = useRef()
+  const [value, setValue] = useState('')
+  const [error, setError] = useState(null)
+  const [success, setSuccess] = useState(false)
 
-  const logIn = event => {
+  const logIn = async event => {
     event.preventDefault()
     const { value } = inputRef.current
-    signIn('keys', { key: 'abc' })
+
+    const r = await fetch('/api/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        k: value
+      })
+    })
+    if (r.status === 200) {
+      setSuccess(true)
+      window.setTimeout(() => {
+        router.push('/')
+      }, 200)
+    }
+    const { error } = await r.json()
+    if (error) {
+      setError(error)
+    }
+  }
+
+  const handleKeyUp = event => {
+    const eventValue = event.target.value
+    if (eventValue !== value) {
+      setError(null)
+      setSuccess(false)
+    }
+    setValue(eventValue)
+  }
+
+  let inputIcon = <RightArrow />
+  if (error) {
+    inputIcon = <Warning />
+  }
+  if (success) {
+    inputIcon = <Check />
   }
 
   return (
     <section className='flex justify-center min-h-full py-10'>
       <div className='max-w-xs text-center'>
         <h1 className='font-outfit text-h1 mb-4'>
-          This is a Private Portfolio
+          This is a private portfolio
         </h1>
         <p className='font-inter text-body mb-6'>
           This site is password protected. There should be a password in the URL
           parameters.
         </p>
-        <form onSubmit={logIn}>
+        <form onSubmit={logIn} className={error && 'error-shake'}>
           <Input
             placeholder='Enter Key'
-            suffixIcon={<RightArrow />}
+            suffixIcon={inputIcon}
             iconClickFn={logIn}
             ref={inputRef}
+            error={!!error}
+            success={success}
+            onKeyUp={handleKeyUp}
           />
+          {error && <p className='mt-4 text-error'>{error}</p>}
         </form>
       </div>
     </section>

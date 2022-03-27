@@ -508,3 +508,55 @@ export const ExternalLink = ({ className }) => (
     />
   </svg>
 )
+
+export const Check = ({ className }) => (
+  <svg
+    width='24'
+    height='24'
+    viewBox='0 0 24 24'
+    fill='none'
+    xmlns='http://www.w3.org/2000/svg'
+    className={className}
+  >
+    <path
+      d='M20.4109 6.20667L9.41089 17.2067L4.41089 12.2067'
+      stroke='currentColor'
+      strokeWidth='2'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    />
+  </svg>
+)
+
+export const Warning = ({ className }) => (
+  <svg
+    width='24'
+    height='24'
+    viewBox='0 0 24 24'
+    fill='none'
+    xmlns='http://www.w3.org/2000/svg'
+    className={className}
+  >
+    <path
+      d='M10.6367 4.13975L2.1667 18.2797C1.99207 18.5822 1.89967 18.925 1.89869 19.2743C1.89771 19.6235 1.98819 19.9669 2.16113 20.2703C2.33406 20.5737 2.58343 20.8265 2.88441 21.0036C3.18539 21.1807 3.5275 21.2759 3.8767 21.2797H20.8167C21.1659 21.2759 21.508 21.1807 21.809 21.0036C22.11 20.8265 22.3593 20.5737 22.5323 20.2703C22.7052 19.9669 22.7957 19.6235 22.7947 19.2743C22.7937 18.925 22.7013 18.5822 22.5267 18.2797L14.0567 4.13975C13.8784 3.84585 13.6274 3.60287 13.3279 3.43423C13.0284 3.26559 12.6904 3.177 12.3467 3.177C12.003 3.177 11.665 3.26559 11.3655 3.43423C11.066 3.60287 10.815 3.84585 10.6367 4.13975V4.13975Z'
+      stroke='currentColor'
+      strokeWidth='2'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    />
+    <path
+      d='M12.3467 9.27979V13.2798'
+      stroke='currentColor'
+      strokeWidth='2'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    />
+    <path
+      d='M12.3467 17.2798H12.3567'
+      stroke='currentColor'
+      strokeWidth='2'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    />
+  </svg>
+)
