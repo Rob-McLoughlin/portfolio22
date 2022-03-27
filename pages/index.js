@@ -1,9 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import { Degree, Clock, Box, GitHub, Book, Figma } from '@/atoms/Icon'
-import fs from 'fs'
-import path from 'path'
-import matter from 'gray-matter'
+import { Box, GitHub, Book, Figma } from '@/atoms/Icon'
 import Card from '@/molecules/Card'
 import WelcomePlate from '@/organisms/WelcomePlate'
 import { useState } from 'react'
@@ -114,25 +111,49 @@ export const getServerSideProps = async context => {
   // Show welcome based on url params
   const showWelcome = context.query.welcome === 'true'
 
-  const files = fs.readdirSync(path.join('projects'))
+  // const files = fs.readdirSync(path.join('projects'))
+  let token = null
+  const cookies = context.req.headers.cookie
+  const authCookie = cookies
+    .split(';')
+    .find(c => c.trim().startsWith('access-token'))
+  if (authCookie) {
+    token = authCookie.split('=')[1]
+  }
 
-  const projects = files.map(filename => {
-    const markdownWithMeta = fs.readFileSync(
-      path.join('projects', filename),
-      'utf-8'
-    )
-    const { data: frontMatter } = matter(markdownWithMeta)
+  const baseUrl =
+    process.env.NODE_ENV === 'production'
+      ? process.env.LIVE_SERVER
+      : process.env.DEV_SERVER
+  console.log(baseUrl)
 
-    return {
-      frontMatter,
-      slug: filename.split('.')[0]
-    }
+  const projectReq = await fetch(`${baseUrl}/api/projects`, {
+    headers: {
+      authorization: `Bearer ${token}`
+    },
+    credentials: 'same-origin' // include, *same-origin, omit
   })
+  // console.log(projectReq)
+  const { projects } = await projectReq.json()
 
-  const ordered = projects.sort(p => p.frontMatter.order).slice(0, 2)
+  // const projects = files.map(filename => {
+  //   const markdownWithMeta = fs.readFileSync(
+  //     path.join('projects', filename),
+  //     'utf-8'
+  //   )
+  //   const { data: frontMatter } = matter(markdownWithMeta)
+
+  //   return {
+  //     frontMatter,
+  //     slug: filename.split('.')[0]
+  //   }
+  // })
+
+  // const ordered = projects.sort(p => p.frontMatter.order).slice(0, 2)
+
   const props = {
     props: {
-      projects: ordered,
+      projects,
       welcome: showWelcome,
       invite: session
     }
