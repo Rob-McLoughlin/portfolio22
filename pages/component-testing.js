@@ -2,11 +2,15 @@ import Card from '@/molecules/Card'
 import Input from '@/atoms/Input'
 import Button from '@/atoms/Button'
 import OverlayBackdrop from '@/atoms/OverlayBackdrop'
+import WelcomePlate from '@/organisms/WelcomePlate'
 import { Box, RightArrow } from '@/atoms/Icon'
+import { useState } from 'react'
+
 const CompontentTesting = ({}) => {
+  const [showWelcome, setShowWelcome] = useState(true)
   return (
     <section>
-      <OverlayBackdrop />
+      {showWelcome && <WelcomePlate closeFn={() => setShowWelcome(false)} />}
       <Card
         title='Card'
         subtitle='Card Subtitle'
