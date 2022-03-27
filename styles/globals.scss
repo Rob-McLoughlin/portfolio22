@@ -103,24 +103,11 @@ html {
         @apply transition;
         pointer-events: none;
         opacity: 0;
+        @apply text-flamingo;
 
         &.nav-open {
             pointer-events: auto;
             animation: navFadeIn 0.3s ease-in-out forwards;
-        }
-
-        &::before {
-            content: "";
-            display: block;
-            position: absolute;
-            top: 0px;
-            left: 0px;
-            height: 100%;
-            width: 100%;
-            background: url('/gradients/blue-pink.png');
-            background-size: 400% 400%;
-            opacity: 0.2;
-            animation: gradientMove 5s ease infinite;
         }
 
         >ul {
@@ -131,8 +118,8 @@ html {
                 animation-delay: 0.2s;
 
                 a {
-                    @apply flex gap-x-1;
-                    @apply text-body text-ink font-outfit;
+                    @apply flex gap-x-2;
+                    @apply text-body text-flamingo font-outfit;
                     @apply py-2;
                 }
             }
