@@ -43,14 +43,6 @@ const Footer = () => {
             </Link>
           </li>
           <li>
-            <Link href='/ideas'>
-              <a className='flex gap-x-1 py-2'>
-                <Box />
-                Ideas
-              </a>
-            </Link>
-          </li>
-          <li>
             <Link href='/code'>
               <a className='flex gap-x-1 py-2'>
                 <GitHub />

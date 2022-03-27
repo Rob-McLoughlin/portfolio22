@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import NavButton from '@/atoms/NavButton'
 import SocialNav from '@/molecules/SocialNav'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Home, Box, GitHub, Book, Figma } from '@/atoms/Icon'
 
 const Nav = () => {
@@ -12,6 +12,13 @@ const Nav = () => {
     if (window.innerWidth >= 768) {
       setDesktop(true)
     }
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 768) {
+        setDesktop(true)
+      } else {
+        setDesktop(false)
+      }
+    })
   }, [])
 
   return (
@@ -50,14 +57,6 @@ const Nav = () => {
                 <a>
                   <Box />
                   {desktop ? 'Projects' : 'Projects & Work'}
-                </a>
-              </Link>
-            </li>
-            <li>
-              <Link href='/ideas'>
-                <a>
-                  <Box />
-                  {desktop ? 'Ideas' : 'Design Ideas'}
                 </a>
               </Link>
             </li>
