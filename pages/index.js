@@ -6,6 +6,7 @@ import path from 'path'
 import matter from 'gray-matter'
 import Card from '@/molecules/Card'
 import QuickLink from '@/molecules/QuickLink'
+import { getSession } from 'next-auth/react'
 
 export default function Home ({ projects }) {
   return (
@@ -92,7 +93,10 @@ export default function Home ({ projects }) {
   )
 }
 
-export const getStaticProps = async () => {
+export const getStaticProps = async context => {
+  const session = await getSession(context)
+  console.log(session)
+
   const files = fs.readdirSync(path.join('projects'))
 
   const projects = files.map(filename => {

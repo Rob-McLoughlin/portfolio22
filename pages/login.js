@@ -1,6 +1,7 @@
 import Input from '@/atoms/Input'
 import { Box, RightArrow } from '@/atoms/Icon'
 import { useEffect, useRef } from 'react'
+import { signIn } from 'next-auth/react'
 
 const Login = ({}) => {
   const inputRef = useRef()
@@ -34,3 +35,14 @@ const Login = ({}) => {
 }
 
 export default Login
+
+// export const getServerSideProps = async context => {
+//   const password = context.query.k
+//   const session = await signIn('credentials', {
+//     redirect: false,
+//     password: 'password'
+//   })
+//   return {
+//     props: {}
+//   }
+// }

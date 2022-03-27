@@ -1,12 +1,16 @@
 import '@/styles/globals.scss'
 import Standard from '@/templates/Standard'
+import { SessionProvider } from 'next-auth/react'
 
-function MyApp ({ Component, pageProps }) {
+export default function MyApp ({
+  Component,
+  pageProps: { session, ...pageProps }
+}) {
   return (
-    <Standard>
-      <Component {...pageProps} />
-    </Standard>
+    <SessionProvider session={session}>
+      <Standard>
+        <Component {...pageProps} />
+      </Standard>
+    </SessionProvider>
   )
 }
-
-export default MyApp
