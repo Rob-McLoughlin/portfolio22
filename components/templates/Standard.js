@@ -1,17 +1,11 @@
 import Nav from '@/organisms/Nav'
 import Footer from '@/organisms/Footer'
 import { useEffect, useState } from 'react'
+import { useRouter } from 'next/router'
 
 const hideNavOnPages = ['/login']
 
-const Standard = ({ children }) => {
-  const [hideNav, setHideNav] = useState(false)
-  useEffect(() => {
-    const path = window.location.pathname
-    if (hideNavOnPages.includes(path)) {
-      setHideNav(true)
-    }
-  }, [hideNav])
+const Standard = ({ children, hideNav }) => {
   return (
     <div>
       {!hideNav && <Nav />}
