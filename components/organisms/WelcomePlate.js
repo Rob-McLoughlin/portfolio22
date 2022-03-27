@@ -31,7 +31,7 @@ const WelcomePlate = ({ invite, closeFn }) => {
         </p>
         <ul className='flex gap-x-2'>
           <li>
-            <Button label='Explore' onClick={closeFn} />
+            <Button label='Explore' onClick={closeFn} href='/' />
           </li>
           <li>
             <Button label='See projects' ghost href='/projects' />

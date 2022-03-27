@@ -26,7 +26,7 @@ const Login = ({}) => {
     if (r.status === 200) {
       setSuccess(true)
       window.setTimeout(() => {
-        router.push('/')
+        router.push('/?welcome=true')
       }, 200)
     }
     const { error } = await r.json()
