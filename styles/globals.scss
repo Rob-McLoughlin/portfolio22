@@ -177,6 +177,7 @@ html {
 
     header {
         +main {
+            transform-origin: top;
             transition: 0.3s cubic-bezier(1, 0.31, 0, 1.15);
         }
 

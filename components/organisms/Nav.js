@@ -16,7 +16,7 @@ const Nav = () => {
 
   useEffect(() => {
     // Close nav on route change
-    router.events.on('routeChangeEnd', handleRouteChange)
+    router.events.on('routeChangeComplete', handleRouteChange)
 
     if (window.innerWidth >= 768) {
       setDesktop(true)
@@ -28,7 +28,7 @@ const Nav = () => {
         setDesktop(false)
       }
     })
-  }, [])
+  }, [router.events])
 
   return (
     <header
