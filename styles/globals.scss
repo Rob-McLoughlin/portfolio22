@@ -89,6 +89,30 @@ html {
         }
     }
 
+    @keyframes navItemFadeIn {
+        0% {
+            filter: blur(2px);
+            transform: translateY(4px);
+            opacity: 0;
+        }
+
+        100% {
+            filter: blur(0px);
+            transform: translateY(0px);
+            opacity: 1;
+        }
+    }
+
+    @keyframes navFadeIn {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
     .mobile-nav {
         position: fixed;
         display: flex;
@@ -105,22 +129,42 @@ html {
         opacity: 0;
         @apply text-flamingo;
 
-        &.nav-open {
-            pointer-events: auto;
-            animation: navFadeIn 0.3s ease-in-out forwards;
-        }
-
         >ul {
             li {
                 @apply my-3;
-                opacity: 0;
-                animation: navFadeIn 0.3s ease-in-out forwards;
-                animation-delay: 0.2s;
 
                 a {
                     @apply flex gap-x-2;
                     @apply text-body text-flamingo font-outfit;
                     @apply py-2;
+                    transform: translateY(4px);
+                    opacity: 0;
+                    transition: 0.3s cubic-bezier(1, 0.31, 0, 1.15)
+                }
+            }
+        }
+
+        &.nav-open {
+            pointer-events: auto;
+            animation: navFadeIn 0.3s ease-in-out forwards;
+
+            >ul {
+                li {
+                    a {
+                        transform: translateY(0px);
+                        opacity: 1;
+
+                    }
+                }
+            }
+        }
+
+        >ul {
+            @for $i from 1 through 8 {
+                li:nth-of-type(#{$i}) {
+                    a {
+                        transition-delay: calc(0.1s * $i);
+                    }
                 }
             }
         }
@@ -129,30 +173,6 @@ html {
             opacity: 0;
             animation: navFadeIn 0.3s ease-in-out forwards;
             animation-delay: 0.3s;
-        }
-    }
-
-    @keyframes gradientMove {
-        0% {
-            background-position: 61% 0%
-        }
-
-        50% {
-            background-position: 40% 80%
-        }
-
-        100% {
-            background-position: 61% 0%
-        }
-    }
-
-    @keyframes navFadeIn {
-        0% {
-            opacity: 0;
-        }
-
-        100% {
-            opacity: 1;
         }
     }
 
