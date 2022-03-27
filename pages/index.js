@@ -5,9 +5,9 @@ import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 import Card from '@/molecules/Card'
-import { exchangeParamForToken, getSession } from '@/lib/auth'
 import WelcomePlate from '@/organisms/WelcomePlate'
 import { useState } from 'react'
+import { getSession } from '@/lib/auth'
 
 export default function Home ({ projects, welcome, invite }) {
   const [showWelcome, setShowWelcome] = useState(welcome)
@@ -100,27 +100,16 @@ export default function Home ({ projects, welcome, invite }) {
   )
 }
 
-const redirect = {
-  redirect: {
-    destination: '/login',
-    permanent: false
-  }
-}
-
 export const getServerSideProps = async context => {
-  // const session = await getSession(context)
-  // const params = context.query
-  // Try to capture the session
-  const session = await getSession(context)
-  if (!session) {
-    const captureToken = await exchangeParamForToken(context)
-    if (!captureToken) {
-      return redirect
+  const redirect = {
+    redirect: {
+      destination: '/login',
+      permanent: false
     }
-    context.res.setHeader('set-cookie', [
-      `access-token=${captureToken}; HttpOnly; Max-Age=86400; Path=/`
-    ])
   }
+
+  // Capture the session
+  const session = await getSession(context)
 
   // Show welcome based on url params
   const showWelcome = context.query.welcome === 'true'

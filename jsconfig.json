@@ -9,7 +9,8 @@
       "@/styles/*": ["styles/*"],
       "@/layouts/*": ["layouts/*"],
       "@/pages/*": ["pages/*"],
-      "@/lib/*": ["lib/*"]
+      "@/lib/*": ["lib/*"],
+      "@/": ["/*"]
     }
   }
 }
