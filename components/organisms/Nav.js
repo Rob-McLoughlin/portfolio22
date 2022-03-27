@@ -8,6 +8,7 @@ import { useRouter } from 'next/router'
 const Nav = () => {
   const [desktop, setDesktop] = useState(false)
   const [navOpen, setNavOpen] = useState(false)
+  const [showLogo, setShowLogo] = useState(false)
   const router = useRouter()
 
   const handleRouteChange = (url, { shallow }) => {
@@ -15,8 +16,30 @@ const Nav = () => {
   }
 
   useEffect(() => {
+    console.log('nav mounted')
     // Close nav on route change
     router.events.on('routeChangeComplete', handleRouteChange)
+
+    // Show or hide logo at the right time
+    const homepageTitle = document.querySelector('.homepage-title')
+    if (!homepageTitle) {
+      setShowLogo(true)
+    }
+    let options = {
+      rootMargin: '0px',
+      threshold: 1.0
+    }
+    const callback = (entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setShowLogo(false)
+        } else {
+          setShowLogo(true)
+        }
+      })
+    }
+    let observer = new IntersectionObserver(callback, options)
+    observer.observe(homepageTitle)
 
     if (window.innerWidth >= 768) {
       setDesktop(true)
@@ -32,12 +55,15 @@ const Nav = () => {
 
   return (
     <header
-      className={`fixed top-0 -left-0 w-full bg-opacity-90 z-20 backdrop-filter backdrop-blur-md ${navOpen &&
+      className={`fixed top-0 -left-0 w-full bg-opacity-90 z-20 backdrop-filter backdrop-blur-md overflow-hidden ${navOpen &&
         'h-full nav-open'}`}
     >
-      <nav className='flex justify-between md:max-w-3xl md:mx-auto bg-white'>
+      <nav className='flex justify-between md:max-w-3xl md:mx-auto overflow-hidden bg-white'>
         <Link href='/'>
-          <a className='flex font-outfit z-20 h-14 w-14 items-center justify-center'>
+          <a
+            className={`flex font-outfit z-20 h-14 w-14 items-center justify-center hover:text-flamingo transition ${!showLogo &&
+              'translate-y-20 opacity-0'}`}
+          >
             RM
           </a>
         </Link>

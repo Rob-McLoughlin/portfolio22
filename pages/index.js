@@ -19,7 +19,9 @@ export default function Home ({ projects }) {
       <section id='intro'>
         <div className='mb-4 flex justify-between md:flex-row-reverse md:justify-end md:items-center md:gap-x-4'>
           <div>
-            <h1 className='font-outfit text-h1 text-ink'>Rob McLoughlin</h1>
+            <h1 className='homepage-title font-outfit text-h1 text-ink'>
+              Rob McLoughlin
+            </h1>
             <span>Product Design @ Chupi &amp; Human</span>
           </div>
           <div className='-mt-4 md:mt-0'>
