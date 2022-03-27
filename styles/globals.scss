@@ -67,6 +67,8 @@ html {
                 a {
                     background: transparent;
 
+                    @apply transition;
+
                     svg {
                         display: none;
                     }
@@ -74,14 +76,7 @@ html {
 
                 &:hover {
                     a {
-                        background: url('/gradients/blue-pink.png');
-                        background-size: 100%;
-                        -webkit-background-clip: text;
-                        -moz-background-clip: text;
-                        background-clip: text;
-                        color: transparent;
-                        animation: gradientMove 2s ease infinite;
-                        transition: 0.2s ease-out;
+                        @apply text-flamingo;
 
                     }
                 }
