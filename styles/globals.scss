@@ -175,6 +175,20 @@ html {
         }
     }
 
+    header {
+        +main {
+            transition: 0.3s cubic-bezier(1, 0.31, 0, 1.15);
+        }
+
+        &.nav-open {
+            +main {
+                transform: scale(0.95);
+                filter: blur(2px);
+                opacity: 0;
+            }
+        }
+    }
+
     .project-card {
         display: block;
         position: relative;
