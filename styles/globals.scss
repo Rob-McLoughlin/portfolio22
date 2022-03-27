@@ -67,6 +67,8 @@ html {
                 a {
                     background: transparent;
 
+                    @apply transition;
+
                     svg {
                         display: none;
                     }
@@ -74,18 +76,39 @@ html {
 
                 &:hover {
                     a {
-                        background: url('/gradients/blue-pink.png');
-                        background-size: 100%;
-                        -webkit-background-clip: text;
-                        -moz-background-clip: text;
-                        background-clip: text;
-                        color: transparent;
-                        animation: gradientMove 2s ease infinite;
-                        transition: 0.2s ease-out;
+                        @apply text-flamingo;
 
                     }
                 }
             }
+        }
+    }
+
+    @keyframes navItemFadeIn {
+        0% {
+            filter: blur(2px);
+            transform: translateY(4px);
+            opacity: 0;
+        }
+
+        100% {
+            filter: blur(0px);
+            transform: translateY(0px);
+            opacity: 1;
+        }
+    }
+
+    @keyframes navFadeIn {
+        0% {
+            transform: scale(0.95);
+            opacity: 0;
+            filter: blur(6px);
+        }
+
+        100% {
+            transform: scale(1);
+            opacity: 1;
+            filter: blur(0px);
         }
     }
 
@@ -103,40 +126,47 @@ html {
         @apply transition;
         pointer-events: none;
         opacity: 0;
-
-        &.nav-open {
-            pointer-events: auto;
-            animation: navFadeIn 0.3s ease-in-out forwards;
-        }
-
-        &::before {
-            content: "";
-            display: block;
-            position: absolute;
-            top: 0px;
-            left: 0px;
-            height: 100%;
-            width: 100%;
-            background: url('/gradients/blue-pink.png');
-            background-size: 400% 400%;
-            opacity: 0.2;
-            animation: gradientMove 5s ease infinite;
-        }
+        @apply text-flamingo;
 
         >ul {
             li {
-                @apply my-3;
-                opacity: 0;
-                animation: navFadeIn 0.3s ease-in-out forwards;
-                animation-delay: 0.2s;
+                @apply my-4;
 
                 a {
-                    @apply flex gap-x-1;
-                    @apply text-body text-ink font-outfit;
+                    @apply flex gap-x-2;
+                    @apply text-body text-flamingo font-outfit;
                     @apply py-2;
+                    // transform: translateY(4px);
+                    // opacity: 0;
+                    // transition: 0.3s cubic-bezier(1, 0.31, 0, 1.15)
                 }
             }
         }
+
+        &.nav-open {
+            pointer-events: auto;
+            animation: navFadeIn 0.2s ease-in-out forwards;
+
+            >ul {
+                li {
+                    a {
+                        // transform: translateY(0px);
+                        // opacity: 1;
+
+                    }
+                }
+            }
+        }
+
+        // >ul {
+        //     @for $i from 1 through 8 {
+        //         li:nth-of-type(#{$i}) {
+        //             a {
+        //                 transition-delay: calc(0.1s * $i);
+        //             }
+        //         }
+        //     }
+        // }
 
         >.social-nav {
             opacity: 0;
@@ -145,80 +175,17 @@ html {
         }
     }
 
-    @keyframes gradientMove {
-        0% {
-            background-position: 61% 0%
+    header {
+        +main {
+            transform-origin: top;
+            transition: 0.3s cubic-bezier(1, 0.31, 0, 1.15);
         }
 
-        50% {
-            background-position: 40% 80%
-        }
-
-        100% {
-            background-position: 61% 0%
-        }
-    }
-
-    @keyframes navFadeIn {
-        0% {
-            opacity: 0;
-        }
-
-        100% {
-            opacity: 1;
-        }
-    }
-
-    .project-card {
-        display: block;
-        position: relative;
-        border: 2px solid black;
-        border-radius: 8px;
-        box-shadow: 0px 4px 4px #EFE3ED;
-        background: white;
-        transition: box-shadow 0.1s ease-out, border-color 0.4s ease-out;
-
-        .hover-arrow {
-            position: absolute;
-            @apply top-4;
-            @apply right-4;
-            opacity: 0;
-            transform: translateY(4px) rotate(45deg);
-            transition: all 0.4s cubic-bezier(0, .71, .44, 1.4);
-        }
-
-        span:nth-of-type(2) {
-            transition: all 0.4s cubic-bezier(0, .71, .44, 1.4);
-        }
-
-        &:hover {
-            border-color: #E16CBE !important;
-            box-shadow: 0px 0px 0px #EFE3ED;
-
-            span:first-of-type {
-                background: url('/gradients/blue-pink.png');
-                background-size: 100%;
-                -webkit-background-clip: text;
-                -moz-background-clip: text;
-                background-clip: text;
-                color: transparent;
-                animation: gradientMove 2s ease infinite;
-                transition: all 0.4s ease-out;
-            }
-
-            span:nth-of-type(2) {
+        &.nav-open {
+            +main {
+                transform: scale(0.95);
+                filter: blur(2px);
                 opacity: 0;
-                transform: translateY(4px);
-            }
-
-            .hover-arrow {
-                opacity: 1;
-                transform: translateY(0px) rotate(0deg);
-
-                path {
-                    transition: all 0.4s ease-out;
-                    stroke: #C85CE7;
-                }
             }
         }
     }
@@ -236,50 +203,6 @@ html {
 
         p {
             @apply text-body mb-8
-        }
-    }
-
-    .quick-link {
-        h2 {
-            background: transparent;
-
-            svg {
-                transition: all 0.4s ease-out;
-                @apply text-ink
-            }
-        }
-
-        .hover-arrow {
-            opacity: 0;
-            transform: translateY(4px) rotate(45deg);
-            transition: all 0.4s cubic-bezier(0, .71, .44, 1.4);
-        }
-
-        &:hover {
-            h2 {
-                background: url('/gradients/blue-pink.png');
-                background-size: 100%;
-                -webkit-background-clip: text;
-                -moz-background-clip: text;
-                background-clip: text;
-                color: transparent;
-                animation: gradientMove 2s ease infinite;
-                transition: all 0.4s ease-out;
-
-                svg {
-                    color: #E16CBE;
-                }
-            }
-
-            .hover-arrow {
-                opacity: 1;
-                transform: translateY(0px) rotate(0deg);
-
-                path {
-                    transition: all 0.4s ease-out;
-                    stroke: #C85CE7;
-                }
-            }
         }
     }
 
@@ -313,9 +236,28 @@ html {
         }
     }
 
+    @keyframes cardPopUp {
+        0% {
+            box-shadow: 0px 0px 0px #EFE3ED;
+        }
+
+        100% {
+            box-shadow: 0px 4px 8px #EFE3ED;
+        }
+    }
+
     .card-shadow {
-        box-shadow: 0px 4px 8px #EFE3ED;
+        // box-shadow: 0px 4px 8px #EFE3ED;
         position: relative;
+        animation: 0.2s ease-out cardPopUp forwards;
+        animation-delay: 0.6s;
+
+        // @for $i from 1 through 8 {
+        //     &:nth-of-type(#{$i}) {
+        //         animation-delay: calc(0.2s * $i);
+        //     }
+        // }
+
 
         // &::after {
         //     content: "";

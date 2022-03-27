@@ -15,14 +15,14 @@ const Projects = ({ projects }) => {
             </h1>
           </div>
         </div>
-        <p>
+        <p className='md:w-1/2'>
           I am not permitted to re-display work so I will link to the live
           project and write up my process on them!
         </p>
       </section>
 
       <section className='mt-6'>
-        <ul className='md:grid md:grid-cols-2 gap-x-6'>
+        <ul className='flex flex-col gap-6 md:grid md:grid-cols-2'>
           {projects.map(({ slug, frontMatter: project }) => {
             return (
               <li key={slug}>

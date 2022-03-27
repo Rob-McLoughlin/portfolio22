@@ -475,3 +475,36 @@ export const Close = ({ className }) => (
     />
   </svg>
 )
+
+export const ExternalLink = ({ className }) => (
+  <svg
+    width='24'
+    height='24'
+    viewBox='0 0 24 24'
+    fill='none'
+    xmlns='http://www.w3.org/2000/svg'
+    className={className}
+  >
+    <path
+      d='M18.3826 12.8715V18.8715C18.3826 19.4019 18.1719 19.9106 17.7968 20.2857C17.4217 20.6607 16.913 20.8715 16.3826 20.8715H5.38257C4.85214 20.8715 4.34343 20.6607 3.96835 20.2857C3.59328 19.9106 3.38257 19.4019 3.38257 18.8715V7.87146C3.38257 7.34103 3.59328 6.83232 3.96835 6.45725C4.34343 6.08217 4.85214 5.87146 5.38257 5.87146H11.3826'
+      stroke='currentColor'
+      strokeWidth='2'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    />
+    <path
+      d='M15.3826 2.87146H21.3826V8.87146'
+      stroke='currentColor'
+      strokeWidth='2'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    />
+    <path
+      d='M10.3826 13.8715L21.3826 2.87146'
+      stroke='currentColor'
+      strokeWidth='2'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    />
+  </svg>
+)
