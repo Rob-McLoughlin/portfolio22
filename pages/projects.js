@@ -22,7 +22,7 @@ const Projects = ({ projects }) => {
       </section>
 
       <section className='mt-6'>
-        <ul className='md:grid md:grid-cols-2 gap-x-6'>
+        <ul className='flex flex-col gap-6 md:grid md:grid-cols-2'>
           {projects.map(({ slug, frontMatter: project }) => {
             return (
               <li key={slug}>

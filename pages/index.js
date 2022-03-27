@@ -28,7 +28,7 @@ export default function Home ({ projects }) {
             <Image alt='My face' src='/profile.png' width={64} height={64} />
           </div>
         </div>
-        <summary className='block md:flex md:gap-x-6'>
+        <summary className='block'>
           <p className='mb-4 md:w-1/2'>
             I am a designer and developer from Dublin with 5 years experience
             defining problems and solving them through data-driven designs and
@@ -72,7 +72,7 @@ export default function Home ({ projects }) {
         <p className='md:w-1/2 mb-6'>
           Here is a write up of some recent projects that I’ve done.
         </p>
-        <ul className='md:grid md:grid-cols-2 gap-x-6'>
+        <ul className='md:grid md:grid-cols-2 gap-6'>
           {projects.map(({ slug, frontMatter: project }) => {
             return (
               <li key={slug}>
