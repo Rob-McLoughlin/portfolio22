@@ -35,7 +35,7 @@ const Nav = () => {
       className={`fixed top-0 -left-0 w-full bg-opacity-90 z-20 backdrop-filter backdrop-blur-md ${navOpen &&
         'h-full nav-open'}`}
     >
-      <nav className='flex justify-between md:max-w-4xl md:mx-auto bg-white'>
+      <nav className='flex justify-between md:max-w-3xl md:mx-auto bg-white'>
         <Link href='/'>
           <a className='flex font-outfit z-20 h-14 w-14 items-center justify-center'>
             RM
