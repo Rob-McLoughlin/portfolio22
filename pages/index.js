@@ -93,9 +93,18 @@ export default function Home ({ projects }) {
   )
 }
 
-export const getStaticProps = async context => {
+const redirect = {
+  redirect: {
+    destination: '/login',
+    permanent: false
+  }
+}
+
+export const getServerSideProps = async context => {
   const session = await getSession(context)
-  console.log(session)
+  if (!session) {
+    return redirect
+  }
 
   const files = fs.readdirSync(path.join('projects'))
 
