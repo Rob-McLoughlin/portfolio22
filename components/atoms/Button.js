@@ -1,5 +1,6 @@
-const Input = ({ label, prefixIcon, suffixIcon, onClick, ghost }) => {
-  return (
+import Link from 'next/link'
+const Input = ({ label, prefixIcon, suffixIcon, onClick, ghost, href }) => {
+  const inner = (
     <button
       type='button'
       onClick={onClick}
@@ -26,6 +27,12 @@ const Input = ({ label, prefixIcon, suffixIcon, onClick, ghost }) => {
       )}
     </button>
   )
+
+  if (href) {
+    return <Link href={href}>{inner}</Link>
+  } else {
+    return inner
+  }
 }
 
 export default Input

@@ -16,7 +16,6 @@ const Nav = () => {
   }
 
   useEffect(() => {
-    console.log('nav mounted')
     // Close nav on route change
     router.events.on('routeChangeComplete', handleRouteChange)
 

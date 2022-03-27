@@ -283,4 +283,32 @@ html {
         //     }
         // }
     }
+
+    @keyframes errorShake {
+        $maxOffset: 10px;
+
+        0% {
+            transform: translateX($maxOffset);
+        }
+
+        25% {
+            transform: translateX(-$maxOffset);
+        }
+
+        50% {
+            transform: translateX(calc(#{$maxOffset} / 2));
+        }
+
+        75% {
+            transform: translateX(calc(-#{$maxOffset} / 2));
+        }
+
+        100% {
+            transform: translateX(0px);
+        }
+    }
+
+    .error-shake {
+        animation: 0.2s ease-out errorShake forwards;
+    }
 }
