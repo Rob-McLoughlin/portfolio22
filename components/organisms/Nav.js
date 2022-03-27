@@ -3,12 +3,21 @@ import NavButton from '@/atoms/NavButton'
 import SocialNav from '@/molecules/SocialNav'
 import { useEffect, useState } from 'react'
 import { Home, Box, GitHub, Book, Figma } from '@/atoms/Icon'
+import { useRouter } from 'next/router'
 
 const Nav = () => {
   const [desktop, setDesktop] = useState(false)
   const [navOpen, setNavOpen] = useState(false)
+  const router = useRouter()
+
+  const handleRouteChange = (url, { shallow }) => {
+    setNavOpen(false)
+  }
 
   useEffect(() => {
+    // Close nav on route change
+    router.events.on('routeChangeEnd', handleRouteChange)
+
     if (window.innerWidth >= 768) {
       setDesktop(true)
     }
