@@ -125,7 +125,6 @@ export const getServerSideProps = async context => {
     process.env.NODE_ENV === 'production'
       ? process.env.LIVE_SERVER
       : process.env.DEV_SERVER
-  console.log(baseUrl)
 
   const projectReq = await fetch(`${baseUrl}/api/projects`, {
     headers: {
@@ -135,21 +134,6 @@ export const getServerSideProps = async context => {
   })
   // console.log(projectReq)
   const { projects } = await projectReq.json()
-
-  // const projects = files.map(filename => {
-  //   const markdownWithMeta = fs.readFileSync(
-  //     path.join('projects', filename),
-  //     'utf-8'
-  //   )
-  //   const { data: frontMatter } = matter(markdownWithMeta)
-
-  //   return {
-  //     frontMatter,
-  //     slug: filename.split('.')[0]
-  //   }
-  // })
-
-  // const ordered = projects.sort(p => p.frontMatter.order).slice(0, 2)
 
   const props = {
     props: {
