@@ -1,7 +1,6 @@
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
-import ProjectCard from '@/atoms/ProjectCard'
 import Card from '@/molecules/Card'
 import { Box } from '@/atoms/Icon'
 
