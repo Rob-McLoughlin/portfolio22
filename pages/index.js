@@ -32,40 +32,6 @@ export default function Home ({ projects }) {
             defining problems and solving them through data-driven designs and
             good infastructure.
           </p>
-          <div className='md:w-1/2'>
-            <h2 className='mb-2 font-bold md:hidden'>Experience</h2>
-            <ul>
-              <li className='flex gap-x-2 items-center mb-2'>
-                <Degree />
-                BSc in{' '}
-                <a
-                  className='underline'
-                  target='_blank'
-                  rel='noreferrer'
-                  href='https://iadt.ie/courses/applied-psychology/'
-                >
-                  Applied Psychology
-                </a>{' '}
-                (1.1)
-              </li>
-              <li className='flex gap-x-2 items-center mb-2'>
-                <Degree />
-                MSc in{''}
-                <a
-                  className='underline'
-                  target='_blank'
-                  rel='noreferrer'
-                  href='https://iadt.ie/courses/user-experience-design/'
-                >
-                  UX Design
-                </a>{' '}
-                (1.1)
-              </li>
-              <li className='flex gap-x-2 items-center mb-2'>
-                <Clock />5 Years Experience
-              </li>
-            </ul>
-          </div>
         </summary>
       </section>
 
