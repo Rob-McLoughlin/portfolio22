@@ -1,18 +1,28 @@
 import { RightArrow } from '@/atoms/Icon'
 import Link from 'next/link'
 
-const Card = ({ title, subtitle, body, location, icon, href }) => {
+const Card = ({ title, subtitle, body, location, icon, href, flat }) => {
   const destination = href || null
   const inner = (
-    <div className='group p-4 bg-white rounded-lg card-shadow border-2 border-white cursor-pointer transition text-ink max-w-sm hover:border-flamingo'>
+    <div
+      className={`group p-4 bg-white rounded-lg ${!flat &&
+        'card-shadow'} ${destination &&
+        'cursor-pointer hover:border-flamingo'} border-2 border-white transition text-ink max-w-sm`}
+    >
       <div className='relative flex gap-x-1'>
         <div className='h-6 w-6 text-flamingo'>{icon}</div>
         <div>
-          <span className='block text-body font-outfit transition-colors group-hover:text-flamingo'>
+          <span
+            className={`block text-body font-outfit transition-colors ${destination &&
+              'group-hover:text-flamingo'}`}
+          >
             {title}
           </span>
           {subtitle && (
-            <span className='subtitle mt-2 transition-colors group-hover:text-flamingo'>
+            <span
+              className={`subtitle mt-2 transition-colors ${destination &&
+                'group-hover:text-flamingo'}`}
+            >
               {subtitle}
             </span>
           )}

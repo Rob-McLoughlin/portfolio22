@@ -11,6 +11,7 @@ const CompontentTesting = ({}) => {
         body='Card body'
         location='Side Project'
         icon={<Box />}
+        flat
       />
       <Input
         placeholder='Enter Key'
