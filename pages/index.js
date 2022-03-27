@@ -5,8 +5,7 @@ import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 import Card from '@/molecules/Card'
-import QuickLink from '@/molecules/QuickLink'
-import { getSession } from 'next-auth/react'
+import { exchangeParamForToken, getSession } from '@/lib/auth'
 
 export default function Home ({ projects }) {
   return (
@@ -101,9 +100,20 @@ const redirect = {
 }
 
 export const getServerSideProps = async context => {
+  // const session = await getSession(context)
+  // const params = context.query
+  // Try to capture the session
   const session = await getSession(context)
   if (!session) {
-    return redirect
+    const captureToken = await exchangeParamForToken(context)
+    console.log('captureToken', captureToken)
+    if (!captureToken) {
+      return redirect
+    }
+    // console.log(captureToken)
+    context.res.setHeader('set-cookie', [
+      `access-token=${captureToken}; HttpOnly; Max-Age=86400; Path=/`
+    ])
   }
 
   const files = fs.readdirSync(path.join('projects'))

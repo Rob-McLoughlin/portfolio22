@@ -8,7 +8,8 @@ const Login = ({}) => {
 
   const logIn = event => {
     event.preventDefault()
-    console.log(inputRef.current.value)
+    const { value } = inputRef.current
+    signIn('keys', { key: 'abc' })
   }
 
   return (

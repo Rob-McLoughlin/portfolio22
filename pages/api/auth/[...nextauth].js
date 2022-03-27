@@ -13,7 +13,10 @@ export default NextAuth({
       // e.g. domain, username, password, 2FA token, etc.
       // You can pass any HTML attribute to the <input> tag through the object.
       credentials: {
-        key: { label: 'Key', type: 'string' }
+        key: { label: 'key', type: 'string' }
+      },
+      pages: {
+        signIn: '/login'
       },
       async authorize (credentials, req) {
         // Add logic here to look up the user from the credentials supplied
