@@ -42,7 +42,7 @@ const Card = ({ title, subtitle, body, location, icon, href, flat }) => {
         </span>
         {/* {destination && <hoverElement className={hoverArrowClasses} />} */}
         {/* {externalDestination && <ExternalLink className={hoverArrowClasses} />} */}
-        {hoverElement}
+        {destination && hoverElement}
       </div>
       <summary className='block mt-2 text-ink'>{body}</summary>
     </div>
