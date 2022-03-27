@@ -105,11 +105,15 @@ html {
 
     @keyframes navFadeIn {
         0% {
+            transform: scale(0.95);
             opacity: 0;
+            filter: blur(6px);
         }
 
         100% {
+            transform: scale(1);
             opacity: 1;
+            filter: blur(0px);
         }
     }
 
@@ -131,43 +135,43 @@ html {
 
         >ul {
             li {
-                @apply my-3;
+                @apply my-4;
 
                 a {
                     @apply flex gap-x-2;
                     @apply text-body text-flamingo font-outfit;
                     @apply py-2;
-                    transform: translateY(4px);
-                    opacity: 0;
-                    transition: 0.3s cubic-bezier(1, 0.31, 0, 1.15)
+                    // transform: translateY(4px);
+                    // opacity: 0;
+                    // transition: 0.3s cubic-bezier(1, 0.31, 0, 1.15)
                 }
             }
         }
 
         &.nav-open {
             pointer-events: auto;
-            animation: navFadeIn 0.3s ease-in-out forwards;
+            animation: navFadeIn 0.2s ease-in-out forwards;
 
             >ul {
                 li {
                     a {
-                        transform: translateY(0px);
-                        opacity: 1;
+                        // transform: translateY(0px);
+                        // opacity: 1;
 
                     }
                 }
             }
         }
 
-        >ul {
-            @for $i from 1 through 8 {
-                li:nth-of-type(#{$i}) {
-                    a {
-                        transition-delay: calc(0.1s * $i);
-                    }
-                }
-            }
-        }
+        // >ul {
+        //     @for $i from 1 through 8 {
+        //         li:nth-of-type(#{$i}) {
+        //             a {
+        //                 transition-delay: calc(0.1s * $i);
+        //             }
+        //         }
+        //     }
+        // }
 
         >.social-nav {
             opacity: 0;
