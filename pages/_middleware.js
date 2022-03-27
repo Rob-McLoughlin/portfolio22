@@ -22,7 +22,7 @@ const createToken = async (payload, duration) => {
 }
 
 const exchangeParamForToken = async url => {
-  console.log('Trying to exchange params for token')
+  // console.log('Trying to exchange params for token')
   const urlContainsParams = url.includes('?')
   if (!urlContainsParams) {
     return false
@@ -55,7 +55,6 @@ const exchangeParamForToken = async url => {
 
 // MAIN MIDDLEWARE FUNCTION
 export async function middleware (request) {
-  console.log('URL -> ', request.url)
   let response = NextResponse.next()
   let clear = false
 
@@ -79,18 +78,29 @@ export async function middleware (request) {
     return response
   }
 
-  const authCookie = request.cookies['access-token']
-  if (!authCookie) {
-    response = NextResponse.redirect('/login')
+  let attachedToken = ''
+
+  attachedToken = request.cookies['access-token']
+
+  if (!attachedToken) {
+    const authHeader = request.headers.get('authorization')
+
+    // console.log(request.headers)
+    if (!authHeader) {
+      response = NextResponse.redirect('/login')
+    } else {
+      const token = authHeader.split(' ')[1]
+      attachedToken = token
+    }
   }
 
   const privateKey = process.env.JWT_SECRET
 
   let claim = false
   try {
-    claim = jwt.verify(authCookie, privateKey)
+    claim = jwt.verify(attachedToken, privateKey)
   } catch (err) {
-    console.log(err)
+    // console.log(err)
   }
   if (!claim) {
     response = NextResponse.redirect('/login')
