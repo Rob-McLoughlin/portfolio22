@@ -72,7 +72,7 @@ export default function Home ({ projects }) {
         <p className='md:w-1/2 mb-6'>
           Here is a write up of some recent projects that I’ve done.
         </p>
-        <ul className='md:grid md:grid-cols-2 gap-6'>
+        <ul className='flex flex-col gap-6 md:grid md:grid-cols-2'>
           {projects.map(({ slug, frontMatter: project }) => {
             return (
               <li key={slug}>
