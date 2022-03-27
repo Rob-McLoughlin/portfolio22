@@ -15,7 +15,7 @@ const Projects = ({ projects }) => {
             </h1>
           </div>
         </div>
-        <p>
+        <p className='md:w-1/2'>
           I am not permitted to re-display work so I will link to the live
           project and write up my process on them!
         </p>
