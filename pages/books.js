@@ -1,4 +1,5 @@
-import BookCard from '@/atoms/BookCard'
+import Card from '@/molecules/Card'
+import { Book } from '@/atoms/Icon'
 import { getReadBooks } from '@/lib/notion'
 
 const Books = ({ books }) => {
@@ -26,7 +27,12 @@ const Books = ({ books }) => {
               .join('-')
             return (
               <li key={titleKey}>
-                <BookCard book={book} />
+                <Card
+                  icon={<Book />}
+                  title={book.title}
+                  body={book.blurb}
+                  subtitle={book.author}
+                />
               </li>
             )
           })}

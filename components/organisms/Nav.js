@@ -2,7 +2,7 @@ import Link from 'next/link'
 import NavButton from '@/atoms/NavButton'
 import SocialNav from '@/molecules/SocialNav'
 import { useEffect, useRef, useState } from 'react'
-import { Home, Page, GitHub, Book, Figma } from '@/atoms/Icon'
+import { Home, Box, GitHub, Book, Figma } from '@/atoms/Icon'
 
 const Nav = () => {
   const [desktop, setDesktop] = useState(false)
@@ -48,7 +48,7 @@ const Nav = () => {
             <li>
               <Link href='/projects'>
                 <a>
-                  <Page />
+                  <Box />
                   {desktop ? 'Projects' : 'Projects & Work'}
                 </a>
               </Link>
@@ -56,7 +56,7 @@ const Nav = () => {
             <li>
               <Link href='/ideas'>
                 <a>
-                  <Page />
+                  <Box />
                   {desktop ? 'Ideas' : 'Design Ideas'}
                 </a>
               </Link>

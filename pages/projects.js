@@ -1,7 +1,8 @@
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
-import ProjectCard from '@/atoms/ProjectCard'
+import Card from '@/molecules/Card'
+import { Box } from '@/atoms/Icon'
 
 const Projects = ({ projects }) => {
   return (
@@ -25,7 +26,13 @@ const Projects = ({ projects }) => {
           {projects.map(({ slug, frontMatter: project }) => {
             return (
               <li key={slug}>
-                <ProjectCard project={project} slug={slug} />
+                <Card
+                  title={project.title}
+                  body={project.description}
+                  location={project.at}
+                  href={`/projects/${slug}`}
+                  icon={<Box />}
+                />
               </li>
             )
           })}

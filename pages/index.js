@@ -1,11 +1,10 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import Link from 'next/link'
-import { Degree, Clock, Page, GitHub, Book, Figma } from '@/atoms/Icon'
+import { Degree, Clock, Box, GitHub, Book, Figma } from '@/atoms/Icon'
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
-import ProjectCard from '@/atoms/ProjectCard'
+import Card from '@/molecules/Card'
 import QuickLink from '@/molecules/QuickLink'
 
 export default function Home ({ projects }) {
@@ -33,95 +32,55 @@ export default function Home ({ projects }) {
             defining problems and solving them through data-driven designs and
             good infastructure.
           </p>
-          <div className='md:w-1/2'>
-            <h2 className='mb-2 font-bold md:hidden'>Experience</h2>
-            <ul>
-              <li className='flex gap-x-2 items-center mb-2'>
-                <Degree />
-                BSc in{' '}
-                <a
-                  className='underline'
-                  target='_blank'
-                  rel='noreferrer'
-                  href='https://iadt.ie/courses/applied-psychology/'
-                >
-                  Applied Psychology
-                </a>{' '}
-                (1.1)
-              </li>
-              <li className='flex gap-x-2 items-center mb-2'>
-                <Degree />
-                MSc in{''}
-                <a
-                  className='underline'
-                  target='_blank'
-                  rel='noreferrer'
-                  href='https://iadt.ie/courses/user-experience-design/'
-                >
-                  UX Design
-                </a>{' '}
-                (1.1)
-              </li>
-              <li className='flex gap-x-2 items-center mb-2'>
-                <Clock />5 Years Experience
-              </li>
-            </ul>
-          </div>
         </summary>
       </section>
 
       <section
         id='jump-off'
-        className='py-8 flex flex-col gap-6 md:grid md:grid-cols-2'
+        className='py-24 flex flex-col gap-6 md:grid md:grid-cols-2'
       >
-        <h2 className='-mb-2 font-outfit text-ink text-h1 md:col-span-2'>
-          🚀 Jump Off
-        </h2>
-        <p className='-mb-2 text-ink md:col-span-2 md:w-1/2'>
-          Here are some quick links to jump into my portfolio and get to know
-          how I work.
-        </p>
-        <QuickLink
-          icon={<Page />}
+        <Card
+          icon={<Box />}
           title='Projects &amp; Work'
+          body='Some of my work from Chupi and Human along with some free time projects'
           href='/projects'
-          description='Some of my work from Chupi and Human along with some free time
-                projects.'
         />
-        <QuickLink
+        <Card
           icon={<GitHub />}
           title='Code'
           href='/code'
-          description='Code projects, snippets and Github.'
+          body='Good experiences start at the code level with efficient, best-practice code.'
         />
-        <QuickLink
+        <Card
           icon={<Book />}
           title='Books'
           href='/books'
-          description='Some books I’ve read recently and liked. Pulled from my own
-            personal Notion.'
+          body='Some books I’ve read recently and liked. Pulled from my own personal Notion.'
         />
-        <QuickLink
+        <Card
           icon={<Figma />}
           title='Figma'
           href='/figma'
-          description='Figma designs (including this site) and some lessons on GitHub.'
+          body='Live Figma files for you to see how I use Atomic Design and components.'
         />
       </section>
 
       <section id='projects' className='py-8'>
-        <h2 className='mb-4 font-outfit text-ink text-h1'>
-          📦 Recent Projects
-        </h2>
-        <p className='md:w-1/2'>
-          I am not permitted to re-display work so I will link to the live
-          project and write up my process on them!
+        <h2 className='mb-4 font-outfit text-ink text-h1'>Recent Projects</h2>
+        <p className='md:w-1/2 mb-6'>
+          Here is a write up of some recent projects that I’ve done.
         </p>
         <ul className='md:grid md:grid-cols-2 gap-x-6'>
           {projects.map(({ slug, frontMatter: project }) => {
             return (
               <li key={slug}>
-                <ProjectCard project={project} slug={slug} />
+                <Card
+                  title={project.title}
+                  body={project.description}
+                  location={project.at}
+                  href={`/projects/${slug}`}
+                  icon={<Box />}
+                />
               </li>
             )
           })}

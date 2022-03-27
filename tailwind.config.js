@@ -9,22 +9,12 @@ module.exports = {
         ink: '#140C2C',
         ink_light: '#343041',
         ink_grey: '#D0CFD2',
-        pink: '#DFABB0'
+        pink: '#DFABB0',
+        flamingo: '#D97693'
       },
       fontFamily: {
         outfit: ['Outfit', 'Helvetica, sans-serif'],
-        body: [
-          '-apple-system',
-          'BlinkMacSystemFont',
-          'Segoe UI',
-          'Roboto',
-          'Helvetica',
-          'Arial',
-          'sans-serif',
-          'Apple Color Emoji',
-          'Segoe UI Emoji',
-          'Segoe UI Symbol'
-        ]
+        inter: ['Inter', 'Helvetica, sans-serif']
       },
       fontSize: {
         body: ['16px', '24px'],
