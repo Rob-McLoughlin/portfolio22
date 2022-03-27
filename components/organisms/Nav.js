@@ -22,24 +22,25 @@ const Nav = () => {
 
     // Show or hide logo at the right time
     const homepageTitle = document.querySelector('.homepage-title')
-    if (!homepageTitle) {
+    if (homepageTitle) {
+      let options = {
+        rootMargin: '0px',
+        threshold: 1.0
+      }
+      const callback = (entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            setShowLogo(false)
+          } else {
+            setShowLogo(true)
+          }
+        })
+      }
+      let observer = new IntersectionObserver(callback, options)
+      observer.observe(homepageTitle)
+    } else {
       setShowLogo(true)
     }
-    let options = {
-      rootMargin: '0px',
-      threshold: 1.0
-    }
-    const callback = (entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          setShowLogo(false)
-        } else {
-          setShowLogo(true)
-        }
-      })
-    }
-    let observer = new IntersectionObserver(callback, options)
-    observer.observe(homepageTitle)
 
     if (window.innerWidth >= 768) {
       setDesktop(true)
