@@ -11,7 +11,7 @@ const Standard = ({ children }) => {
     if (hideNavOnPages.includes(path)) {
       setHideNav(true)
     }
-  }, [])
+  }, [hideNav])
   return (
     <div>
       {!hideNav && <Nav />}
