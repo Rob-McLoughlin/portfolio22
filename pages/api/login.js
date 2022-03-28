@@ -14,7 +14,8 @@ export default async function handler (req, res) {
   }
   const token = await createToken(invite)
   res.setHeader('set-cookie', [
-    `access-token=${token}; HttpOnly; Max-Age=86400; Path=/`
+    // `access-token=${token}; HttpOnly; Max-Age=86400; Path=/`
+    `access-token=${token}; Max-Age=86400; Path=/`
   ])
   res.status(200).json({ message: 'Success' })
 }
