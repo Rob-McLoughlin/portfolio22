@@ -3,6 +3,9 @@ import { Close } from '@/atoms/Icon'
 import OverlayBackdrop from '@/atoms/OverlayBackdrop'
 
 const WelcomePlate = ({ invite, closeFn }) => {
+  const introText = invite.text || 'Thank you for checking out my portfolio.'
+
+  const { ctas } = invite
   return (
     <>
       <OverlayBackdrop onClick={closeFn} />
@@ -18,8 +21,7 @@ const WelcomePlate = ({ invite, closeFn }) => {
           Hi {invite ? invite.name : 'there'}!
         </h3>
         <p className='text-body mb-6'>
-          Thank you for checking out my portfolio. If you have any questions you
-          can email me at:{' '}
+          {introText} If you have any questions you can email me at:{' '}
           <a
             className='underline'
             target='_blank'
@@ -30,12 +32,16 @@ const WelcomePlate = ({ invite, closeFn }) => {
           </a>
         </p>
         <ul className='flex gap-x-2'>
-          <li>
-            <Button label='Explore' onClick={closeFn} href='/' />
-          </li>
-          <li>
-            <Button label='See projects' ghost href='/projects' />
-          </li>
+          {ctas.map(({ text, url }, index) => (
+            <li key={text}>
+              <Button
+                label={text}
+                onClick={closeFn}
+                href={url}
+                ghost={index > 0}
+              />
+            </li>
+          ))}
         </ul>
       </div>
     </>
