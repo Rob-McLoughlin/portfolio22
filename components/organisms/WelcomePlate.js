@@ -31,18 +31,20 @@ const WelcomePlate = ({ invite, closeFn }) => {
             robbiemcloughlin@gmail.com
           </a>
         </p>
-        <ul className='flex gap-x-2'>
-          {ctas.map(({ text, url }, index) => (
-            <li key={text}>
-              <Button
-                label={text}
-                onClick={closeFn}
-                href={url}
-                ghost={index > 0}
-              />
-            </li>
-          ))}
-        </ul>
+        {ctas && (
+          <ul className='flex gap-x-2'>
+            {ctas.map(({ text, url }, index) => (
+              <li key={text}>
+                <Button
+                  label={text}
+                  onClick={closeFn}
+                  href={url}
+                  ghost={index > 0}
+                />
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
     </>
   )
