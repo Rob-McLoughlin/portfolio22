@@ -10,7 +10,9 @@ const CompontentTesting = ({}) => {
   const [showWelcome, setShowWelcome] = useState(true)
   return (
     <section>
-      {showWelcome && <WelcomePlate closeFn={() => setShowWelcome(false)} />}
+      {showWelcome && (
+        <WelcomePlate invite={{}} closeFn={() => setShowWelcome(false)} />
+      )}
       <Card
         title='Card'
         subtitle='Card Subtitle'

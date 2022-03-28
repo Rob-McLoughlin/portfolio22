@@ -3,13 +3,42 @@ import Image from 'next/image'
 import { Box, GitHub, Book, Figma } from '@/atoms/Icon'
 import Card from '@/molecules/Card'
 import WelcomePlate from '@/organisms/WelcomePlate'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
+const jwt = require('jsonwebtoken')
+
+const decodeTokenWithoutVerify = token => {
+  let claim = false
+  try {
+    claim = jwt.decode(token)
+  } catch (err) {
+    console.log(err)
+  }
+  return claim
+}
 
 export default function Home ({ projects }) {
   const [showWelcome, setShowWelcome] = useState(false)
+  const [invite, setInvite] = useState(null)
+
+  useEffect(() => {
+    const query = window.location.search
+    if (!query.includes('welcome=')) {
+      return
+    }
+    setShowWelcome(true)
+    const authCookie = document.cookie
+      .split(';')
+      .find(c => c.trim().startsWith('access-token='))
+    if (!authCookie) {
+      return
+    }
+    const token = authCookie.split('=')[1]
+    const claim = decodeTokenWithoutVerify(token)
+    setInvite(claim)
+  }, [])
 
   return (
     <div>

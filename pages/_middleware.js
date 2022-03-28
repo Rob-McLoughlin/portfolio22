@@ -72,7 +72,7 @@ export async function middleware (request) {
   const tokenFromParams = await exchangeParamForToken(request.url)
   if (tokenFromParams) {
     response.cookie('access-token', tokenFromParams, {
-      httpOnly: true,
+      // httpOnly: true,
       maxAge: 1000 * 60 * 60 * 24 * 7
     })
     return response
