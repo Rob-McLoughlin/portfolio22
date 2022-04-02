@@ -5,6 +5,7 @@ import OverlayBackdrop from '@/atoms/OverlayBackdrop'
 import WelcomePlate from '@/organisms/WelcomePlate'
 import { Box, RightArrow } from '@/atoms/Icon'
 import { useState } from 'react'
+import SmallCard from '@/molecules/SmallCard'
 
 const CompontentTesting = ({}) => {
   const [showWelcome, setShowWelcome] = useState(true)
@@ -32,6 +33,10 @@ const CompontentTesting = ({}) => {
         prefixIcon={<Box />}
         onClick={() => console.log('click')}
       />
+
+      <div className='mt-12'>
+        <SmallCard href='/' icon={<Box />} />
+      </div>
     </section>
   )
 }

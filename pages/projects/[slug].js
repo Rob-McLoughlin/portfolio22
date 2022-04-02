@@ -4,21 +4,83 @@ import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 import Link from 'next/link'
+import { GitHub, Figma, Box } from '@/atoms/Icon'
+import SmallCard from '@/molecules/SmallCard'
+import Head from 'next/head'
+import Card from '@/molecules/Card'
+import Image from 'next/image'
 
-const PostPage = ({ frontMatter, mdxSource }) => {
+const width = 'max-w-xl'
+// this object will contain all the replacements we want to make
+const components = {
+  h2: props => (
+    <h2 className={`${width} mx-auto text-h2 font-outfit mb-4`}>
+      {props.children}
+    </h2>
+  ),
+  p: props => <p className={`${width} mx-auto mb-10`}>{props.children}</p>,
+  img: props => (
+    // height and width are part of the props, so they get automatically passed here with {...props}
+    <div className='relative aspect-video w-full my-12'>
+      <Image
+        {...props}
+        layout='fill'
+        loading='lazy'
+        objectFit='contain'
+        alt={props.alt}
+      />
+    </div>
+  )
+}
+
+const PostPage = ({ frontMatter, mdxSource, otherProjects }) => {
   return (
-    <main className='mx-auto relative mt-24 px-4 max-w-xl'>
-      <Link href='/projects'>
-        <a className='underline'>Projects /</a>
-      </Link>
-      <article className='project-prose'>
-        <MDXRemote {...mdxSource} />
-      </article>
-      <div className='block text-center my-16'>
-        <Link href='/projects'>
-          <a className='underline'>View All Projects</a>
-        </Link>
+    <main className='mx-auto relative mt-24 text-ink'>
+      <Head>
+        <title>Rob McLoughlin - {frontMatter.title}</title>
+        <meta name='description' content={frontMatter.description} />
+        <link rel='icon' href='/favicon.ico' />
+      </Head>
+      <div className='flex my-6 max-w-xl mx-auto mb-12'>
+        <div>
+          <Link href='/projects'>
+            <a className='hover:underline'>Projects /</a>
+          </Link>
+          <h1 className='text-title font-outfit mb-1'>{frontMatter.title}</h1>
+          <span>
+            {frontMatter.year} | {frontMatter.at}
+          </span>
+        </div>
+        <div className='ml-auto flex gap-x-2 items-center'>
+          {frontMatter.github_link && (
+            <SmallCard href={frontMatter.github_link} icon={<GitHub />} />
+          )}
+          {frontMatter.figma_link && (
+            <SmallCard href={frontMatter.figma_link} icon={<Figma />} />
+          )}
+        </div>
       </div>
+      <article>
+        <MDXRemote {...mdxSource} components={components} />
+      </article>
+      <section className='mt-24 border-t py-24 md:pb-0'>
+        <h3 className='text-h3 font-outfit mb-4'>Other Projects</h3>
+        <ul className='flex flex-col gap-6 md:grid md:grid-cols-2'>
+          {otherProjects.map(({ slug, frontMatter: project }) => {
+            return (
+              <li key={slug}>
+                <Card
+                  title={project.title}
+                  body={project.description}
+                  location={project.at}
+                  href={`/projects/${slug}`}
+                  icon={<Box />}
+                />
+              </li>
+            )
+          })}
+        </ul>
+      </section>
     </main>
   )
 }
@@ -47,11 +109,31 @@ const getStaticProps = async ({ params: { slug } }) => {
   const { data: frontMatter, content } = matter(markdownWithMeta)
   const mdxSource = await serialize(content)
 
+  const files = fs.readdirSync(path.join('projects'))
+
+  const projects = files.map(filename => {
+    const markdownWithMeta = fs.readFileSync(
+      path.join('projects', filename),
+      'utf-8'
+    )
+    const { data: frontMatter } = matter(markdownWithMeta)
+
+    return {
+      frontMatter,
+      slug: filename.split('.')[0]
+    }
+  })
+
+  const filtered = projects.filter(
+    p => p.frontMatter.title !== frontMatter.title
+  )
+
   return {
     props: {
       frontMatter,
       slug,
-      mdxSource
+      mdxSource,
+      otherProjects: filtered.slice(0, 2)
     }
   }
 }

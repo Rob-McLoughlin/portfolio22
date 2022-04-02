@@ -20,6 +20,7 @@ module.exports = {
       },
       fontSize: {
         body: ['16px', '24px'],
+        title: ['32px', '32px'],
         h1: ['24px', '30px'],
         h2: ['24px', '24px'],
         h3: ['24px', '30px'],
