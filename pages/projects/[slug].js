@@ -22,7 +22,13 @@ const components = {
   img: props => (
     // height and width are part of the props, so they get automatically passed here with {...props}
     <div className='relative aspect-video w-full my-12'>
-      <Image {...props} layout='fill' loading='lazy' objectFit='contain' />
+      <Image
+        {...props}
+        layout='fill'
+        loading='lazy'
+        objectFit='contain'
+        alt={props.alt}
+      />
     </div>
   )
 }
