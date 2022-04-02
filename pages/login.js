@@ -2,7 +2,7 @@ import Input from '@/atoms/Input'
 import { Check, Warning, RightArrow } from '@/atoms/Icon'
 import { useState, useRef } from 'react'
 import { useRouter } from 'next/router'
-import Head from 'next/home'
+import Head from 'next/head'
 
 const Login = ({}) => {
   const router = useRouter()
