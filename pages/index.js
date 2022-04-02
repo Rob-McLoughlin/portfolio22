@@ -44,8 +44,6 @@ export default function Home ({ projects }) {
     <div>
       <Head>
         <title>Rob McLoughlin</title>
-        <meta name='description' content='Private Portfolio' />
-        <link rel='icon' href='/favicon.ico' />
       </Head>
 
       {showWelcome && (

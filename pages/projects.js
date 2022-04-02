@@ -3,10 +3,14 @@ import path from 'path'
 import matter from 'gray-matter'
 import Card from '@/molecules/Card'
 import { Box } from '@/atoms/Icon'
+import Head from 'next/head'
 
 const Projects = ({ projects }) => {
   return (
     <div>
+      <Head>
+        <title>Rob McLoughlin | Projects</title>
+      </Head>
       <section id='intro'>
         <div className='flex justify-between mb-4'>
           <div>

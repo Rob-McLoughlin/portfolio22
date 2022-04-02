@@ -1,10 +1,14 @@
 import Card from '@/molecules/Card'
 import { Book } from '@/atoms/Icon'
 import { getReadBooks } from '@/lib/notion'
+import Head from 'next/head'
 
 const Books = ({ books }) => {
   return (
     <div>
+      <Head>
+        <title>Rob McLoughlin | Books</title>
+      </Head>
       <section id='intro'>
         <div className='mb-4 flex justify-between'>
           <div>

@@ -1,5 +1,6 @@
 import Card from '@/molecules/Card'
 import { GitHub } from '@/atoms/Icon'
+import Head from 'next/head'
 
 const projects = [
   {
@@ -19,6 +20,9 @@ const projects = [
 const Code = ({}) => {
   return (
     <div>
+      <Head>
+        <title>Rob McLoughlin | Code</title>
+      </Head>
       <section id='intro'>
         <div className='mb-4 flex justify-between'>
           <div>

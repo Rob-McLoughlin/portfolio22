@@ -2,6 +2,7 @@ import Input from '@/atoms/Input'
 import { Check, Warning, RightArrow } from '@/atoms/Icon'
 import { useState, useRef } from 'react'
 import { useRouter } from 'next/router'
+import Head from 'next/home'
 
 const Login = ({}) => {
   const router = useRouter()
@@ -54,6 +55,14 @@ const Login = ({}) => {
 
   return (
     <section className='flex justify-center min-h-full py-10'>
+      <Head>
+        <title>Portfolio Sign In</title>
+        <meta
+          name='description'
+          content='This site is password protected. There should be a password in the URL
+          parameters.'
+        />
+      </Head>
       <div className='max-w-xs text-center'>
         <h1 className='font-outfit text-h1 mb-4'>
           This is a private portfolio

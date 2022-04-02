@@ -12,6 +12,8 @@ class MyDocument extends Document {
             rel='stylesheet'
           />
           <meta name='robots' content='noindex,nofollow' />
+          <link rel='icon' href='/favicon.ico' />
+          <meta name='description' content='Private Portfolio' />
         </Head>
         <body>
           <Main />
