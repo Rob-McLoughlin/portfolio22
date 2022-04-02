@@ -12,7 +12,7 @@ class MyDocument extends Document {
             rel='stylesheet'
           />
           <meta name='robots' content='noindex,nofollow' />
-          <link rel='icon' href='/favicon.ico' />
+          <link rel='icon' href='/favicon_logged_out.svg' />
           <meta name='description' content='Private Portfolio' />
         </Head>
         <body>
