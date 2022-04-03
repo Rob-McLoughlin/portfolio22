@@ -1,5 +1,5 @@
 import Input from '@/atoms/Input'
-import { Check, Warning, RightArrow } from '@/atoms/Icon'
+import { Check, Warning, RightArrow, Spinner } from '@/atoms/Icon'
 import { useState, useRef } from 'react'
 import { useRouter } from 'next/router'
 import Head from 'next/head'
@@ -9,10 +9,12 @@ const Login = ({}) => {
   const inputRef = useRef()
   const [value, setValue] = useState('')
   const [error, setError] = useState(null)
+  const [loading, setLoading] = useState(false)
   const [success, setSuccess] = useState(false)
 
   const logIn = async event => {
     event.preventDefault()
+    setLoading(true)
     const { value } = inputRef.current
 
     const r = await fetch('/api/login', {
@@ -25,6 +27,7 @@ const Login = ({}) => {
       })
     })
     if (r.status === 200) {
+      setLoading(false)
       setSuccess(true)
       window.setTimeout(() => {
         router.push('/?welcome=true')
@@ -32,6 +35,7 @@ const Login = ({}) => {
     }
     const { error } = await r.json()
     if (error) {
+      setLoading(false)
       setError(error)
     }
   }
@@ -39,6 +43,7 @@ const Login = ({}) => {
   const handleKeyUp = event => {
     const eventValue = event.target.value
     if (eventValue !== value) {
+      setLoading(false)
       setError(null)
       setSuccess(false)
     }
@@ -48,6 +53,9 @@ const Login = ({}) => {
   let inputIcon = <RightArrow />
   if (error) {
     inputIcon = <Warning />
+  }
+  if (loading) {
+    inputIcon = <Spinner className='animate-spin' />
   }
   if (success) {
     inputIcon = <Check />
