@@ -15,7 +15,8 @@ export default function MyApp ({ Component, pageProps }) {
   useEffect(() => {
     // Tag Manager
     TagManager.initialize(tagManagerArgs)
-  }, [router.events])
+    // TagManager.dataLayer({ dataLayer: { pagePath: router.asPath } })
+  }, [router.pathname])
 
   return (
     <Standard hideNav={hideNavOnPages.includes(router.pathname)}>
