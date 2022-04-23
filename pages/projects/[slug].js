@@ -10,15 +10,20 @@ import Head from 'next/head'
 import Card from '@/molecules/Card'
 import Image from 'next/image'
 
-const width = 'max-w-xl'
+const width = 'max-w-lg'
 // this object will contain all the replacements we want to make
 const components = {
   h2: props => (
-    <h2 className={`${width} mx-auto text-h2 font-outfit mb-4`}>
+    <h2 className={`text-h2 text-flamingo font-outfit mb-4`}>
       {props.children}
     </h2>
   ),
-  p: props => <p className={`${width} mx-auto mb-10`}>{props.children}</p>,
+  h3: props => (
+    <h3 className='text-h4 text-flamingo font-outfit mb-4'>{props.children}</h3>
+  ),
+  p: props => <p className={`text-ink text-body mb-10`}>{props.children}</p>,
+  ul: props => <ul className={`mb-10`}>{props.children}</ul>,
+  ol: props => <ol className={`list-decimal pl-6 mb-10`}>{props.children}</ol>,
   img: props => (
     // height and width are part of the props, so they get automatically passed here with {...props}
     <div className='relative aspect-video w-full my-12'>
@@ -35,17 +40,14 @@ const components = {
 
 const PostPage = ({ frontMatter, mdxSource, otherProjects }) => {
   return (
-    <main className='mx-auto relative mt-24 text-ink'>
+    <main className='relative mt-24 text-ink'>
       <Head>
         <title>Rob McLoughlin - {frontMatter.title}</title>
         <meta name='description' content={frontMatter.description} />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <div className='flex my-6 max-w-xl mx-auto mb-12'>
+      <div className='flex my-24 mt-32 max-w-lg mx-auto'>
         <div>
-          <Link href='/projects'>
-            <a className='hover:underline'>Projects /</a>
-          </Link>
           <h1 className='text-title font-outfit mb-1'>{frontMatter.title}</h1>
           <span>
             {frontMatter.year} | {frontMatter.at}
@@ -60,7 +62,7 @@ const PostPage = ({ frontMatter, mdxSource, otherProjects }) => {
           )}
         </div>
       </div>
-      <article>
+      <article className='max-w-lg mx-auto'>
         <MDXRemote {...mdxSource} components={components} />
       </article>
       <section className='mt-24 border-t py-24 md:pb-0'>
