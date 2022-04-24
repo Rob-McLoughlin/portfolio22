@@ -3,9 +3,20 @@ import Standard from '@/templates/Standard'
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import TagManager from 'react-gtm-module'
+const jwt = require('jsonwebtoken')
 
 const tagManagerArgs = {
   gtmId: 'GTM-545LPZB'
+}
+
+const decodeTokenWithoutVerify = token => {
+  let claim = false
+  try {
+    claim = jwt.decode(token)
+  } catch (err) {
+    console.log(err)
+  }
+  return claim
 }
 
 export default function MyApp ({ Component, pageProps }) {
@@ -16,7 +27,23 @@ export default function MyApp ({ Component, pageProps }) {
     // Tag Manager
     TagManager.initialize(tagManagerArgs)
     // TagManager.dataLayer({ dataLayer: { pagePath: router.asPath } })
-  }, [router.pathname])
+    const authCookie = document.cookie
+      .split(';')
+      .find(c => c.trim().startsWith('access-token='))
+    if (authCookie) {
+      const token = authCookie.split('=')[1]
+      const claim = decodeTokenWithoutVerify(token)
+      console.log(claim)
+    }
+    TagManager.dataLayer({
+      dataLayer: {
+        event: 'pageview',
+        pagePath: router.pathname,
+        pageTitle: router.pageTitle,
+        invitee: claim.name
+      }
+    })
+  }, [router.pageTitle, router.pathname])
 
   return (
     <Standard hideNav={hideNavOnPages.includes(router.pathname)}>
