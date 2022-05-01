@@ -35,6 +35,7 @@ yarn-error.log*
 
 # projects
 projects/*.mdx
+public/video/*.mp4
 
 # access
 access.json

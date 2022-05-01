@@ -3,8 +3,7 @@ import { MDXRemote } from 'next-mdx-remote'
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
-import Link from 'next/link'
-import { GitHub, Figma, Box } from '@/atoms/Icon'
+import { GitHub, Figma, Box, ExternalLink } from '@/atoms/Icon'
 import SmallCard from '@/molecules/SmallCard'
 import Head from 'next/head'
 import Card from '@/molecules/Card'
@@ -35,6 +34,13 @@ const components = {
         alt={props.alt}
       />
     </div>
+  ),
+  video: props => (
+    <div className='relative aspect-video w-full my-12'>
+      <video controls muted playsInline autoPlay>
+        <source src={props.src} type='video/mp4' />
+      </video>
+    </div>
   )
 }
 
@@ -59,6 +65,12 @@ const PostPage = ({ frontMatter, mdxSource, otherProjects }) => {
           )}
           {frontMatter.figma_link && (
             <SmallCard href={frontMatter.figma_link} icon={<Figma />} />
+          )}
+          {frontMatter.project_link && (
+            <SmallCard
+              href={frontMatter.project_link}
+              icon={<ExternalLink />}
+            />
           )}
         </div>
       </div>
