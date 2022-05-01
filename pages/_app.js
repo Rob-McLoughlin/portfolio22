@@ -33,14 +33,13 @@ export default function MyApp ({ Component, pageProps }) {
     if (authCookie) {
       const token = authCookie.split('=')[1]
       const claim = decodeTokenWithoutVerify(token)
-      console.log(claim)
     }
     TagManager.dataLayer({
       dataLayer: {
         event: 'pageview',
         pagePath: router.pathname,
         pageTitle: router.pageTitle,
-        invitee: claim.name
+        invitee: claim ? claim.name : '(not set)'
       }
     })
   }, [router.pageTitle, router.pathname])
