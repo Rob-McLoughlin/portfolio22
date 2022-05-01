@@ -26,20 +26,12 @@ export default function MyApp ({ Component, pageProps }) {
   useEffect(() => {
     // Tag Manager
     TagManager.initialize(tagManagerArgs)
-    // TagManager.dataLayer({ dataLayer: { pagePath: router.asPath } })
-    const authCookie = document.cookie
-      .split(';')
-      .find(c => c.trim().startsWith('access-token='))
-    if (authCookie) {
-      const token = authCookie.split('=')[1]
-      const claim = decodeTokenWithoutVerify(token)
-    }
     TagManager.dataLayer({
       dataLayer: {
         event: 'pageview',
         pagePath: router.pathname,
         pageTitle: router.pageTitle,
-        invitee: claim ? claim.name : '(not set)'
+        invitee: window.claim ? claim.name : '(not set)'
       }
     })
   }, [router.pageTitle, router.pathname])
