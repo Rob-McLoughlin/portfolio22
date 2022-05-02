@@ -8,12 +8,6 @@ const projects = [
     link: 'https://github.com/Rob-McLoughlin/portfolio22',
     description:
       'A write up of this website that you’re on now and the process I went through to design and develop it.'
-  },
-  {
-    title: 'Listen List',
-    link: 'https://github.com/Rob-McLoughlin/portfolio22',
-    description:
-      'A long-running open-source side project that allows users to save lists of albums they want to listen to.'
   }
 ]
 
