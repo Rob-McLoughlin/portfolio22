@@ -22,7 +22,7 @@ const components = {
   ),
   p: props => <p className={`text-ink text-body mb-10`}>{props.children}</p>,
   strong: props => (
-    <strong className={`font-semibold text-flamingo`}>{props.children}</strong>
+    <strong className={`font-semibold`}>{props.children}</strong>
   ),
   ul: props => <ul className={`mb-10`}>{props.children}</ul>,
   ol: props => <ol className={`list-decimal pl-6 mb-10`}>{props.children}</ol>,
@@ -55,7 +55,7 @@ const PostPage = ({ frontMatter, mdxSource, otherProjects }) => {
         <meta name='description' content={frontMatter.description} />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <div className='flex my-24 mt-32 max-w-lg mx-auto'>
+      <div className='flex gap-x-4 my-24 mt-32 max-w-lg mx-auto'>
         <div>
           <h1 className='text-title font-outfit mb-1'>{frontMatter.title}</h1>
           <span>
