@@ -21,6 +21,9 @@ const components = {
     <h3 className='text-h4 text-flamingo font-outfit mb-4'>{props.children}</h3>
   ),
   p: props => <p className={`text-ink text-body mb-10`}>{props.children}</p>,
+  strong: props => (
+    <strong className={`font-semibold text-flamingo`}>{props.children}</strong>
+  ),
   ul: props => <ul className={`mb-10`}>{props.children}</ul>,
   ol: props => <ol className={`list-decimal pl-6 mb-10`}>{props.children}</ol>,
   img: props => (
