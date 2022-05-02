@@ -6,7 +6,7 @@ const projects = [
   {
     title: 'Personal Portfolio',
     link:
-      'https://www.figma.com/file/cyff5Us1LkuM2dIIOgG1Xo/Portfolio-22?node-id=0%3A1',
+      'https://www.figma.com/file/cyff5Us1LkuM2dIIOgG1Xo/Portfolio-22?node-id=210%3A267',
     description:
       'I designed this site and the components for it with Figma, you can see it here!'
   }
