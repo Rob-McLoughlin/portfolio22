@@ -9,7 +9,7 @@ const WelcomePlate = ({ invite, closeFn }) => {
   return (
     <>
       <OverlayBackdrop onClick={closeFn} />
-      <div className='fixed px-6 py-8 border border-ink rounded max-w-xs bg-white z-20 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
+      <div className='fixed px-6 py-8 border border-ink rounded max-w-xs md:max-w-lg bg-white z-20 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
         <button
           type='button'
           className='absolute top-8 right-6'
