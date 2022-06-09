@@ -3,7 +3,7 @@ import { MDXRemote } from 'next-mdx-remote'
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
-import { GitHub, Figma, Box, ExternalLink } from '@/atoms/Icon'
+import { GitHub, Figma, Box, ExternalLink, Android, Apple } from '@/atoms/Icon'
 import SmallCard from '@/molecules/SmallCard'
 import Head from 'next/head'
 import Card from '@/molecules/Card'
@@ -68,6 +68,12 @@ const PostPage = ({ frontMatter, mdxSource, otherProjects }) => {
           )}
           {frontMatter.figma_link && (
             <SmallCard href={frontMatter.figma_link} icon={<Figma />} />
+          )}
+          {frontMatter.ios_link && (
+            <SmallCard href={frontMatter.ios_link} icon={<Apple />} />
+          )}
+          {frontMatter.android_link && (
+            <SmallCard href={frontMatter.android_link} icon={<Android />} />
           )}
           {frontMatter.project_link && (
             <SmallCard
