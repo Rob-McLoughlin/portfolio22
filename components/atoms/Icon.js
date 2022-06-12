@@ -673,3 +673,55 @@ export const Android = ({ className }) => (
     />
   </svg>
 )
+
+export const BoxMinus = ({ className }) => (
+  <svg
+    width='24'
+    height='24'
+    viewBox='0 0 24 24'
+    fill='none'
+    xmlns='http://www.w3.org/2000/svg'
+    className={className}
+  >
+    <path
+      d='M18.759 3.15234H4.75903C3.65446 3.15234 2.75903 4.04777 2.75903 5.15234V19.1523C2.75903 20.2569 3.65446 21.1523 4.75903 21.1523H18.759C19.8636 21.1523 20.759 20.2569 20.759 19.1523V5.15234C20.759 4.04777 19.8636 3.15234 18.759 3.15234Z'
+      stroke='currentColor'
+      strokeWidth='2'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    />
+    <path
+      d='M7.75903 12.1523H15.759'
+      stroke='currentColor'
+      strokeWidth='2'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    />
+  </svg>
+)
+
+export const BoxCheck = ({ className }) => (
+  <svg
+    width='24'
+    height='24'
+    viewBox='0 0 24 24'
+    fill='none'
+    xmlns='http://www.w3.org/2000/svg'
+    className={className}
+  >
+    <path
+      d='M9 11.1523L12 14.1523L22 4.15234'
+      stroke='currentColor'
+      strokeWidth='2'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    />
+    <path
+      d='M21 12.1523V19.1523C21 19.6828 20.7893 20.1915 20.4142 20.5666C20.0391 20.9416 19.5304 21.1523 19 21.1523H5C4.46957 21.1523 3.96086 20.9416 3.58579 20.5666C3.21071 20.1915 3 19.6828 3 19.1523V5.15234C3 4.62191 3.21071 4.1132 3.58579 3.73813C3.96086 3.36306 4.46957 3.15234 5 3.15234H16'
+      stroke='currentColor'
+      strokeWidth='2'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    />
+  </svg>
+)
