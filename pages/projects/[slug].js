@@ -8,6 +8,7 @@ import SmallCard from '@/molecules/SmallCard'
 import Head from 'next/head'
 import Card from '@/molecules/Card'
 import Image from 'next/image'
+import RoleRow from '@/molecules/RoleRow'
 
 const width = 'max-w-lg'
 // this object will contain all the replacements we want to make
@@ -48,14 +49,15 @@ const components = {
 }
 
 const PostPage = ({ frontMatter, mdxSource, otherProjects }) => {
+  const { roles } = frontMatter
   return (
-    <main className='relative mt-24 text-ink'>
+    <main className='relative mt-4 text-ink'>
       <Head>
         <title>Rob McLoughlin - {frontMatter.title}</title>
         <meta name='description' content={frontMatter.description} />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <div className='flex gap-x-4 my-24 mt-32 max-w-lg mx-auto'>
+      <div className='flex gap-x-4 mb-4 mt-32 max-w-lg mx-auto'>
         <div>
           <h1 className='text-title font-outfit mb-1'>{frontMatter.title}</h1>
           <span>
@@ -82,6 +84,12 @@ const PostPage = ({ frontMatter, mdxSource, otherProjects }) => {
             />
           )}
         </div>
+      </div>
+      <div className='mb-9 max-w-lg mx-auto'>
+        {roles &&
+          Object.entries(roles).map(([key, value]) => (
+            <RoleRow key={key} label={key} hadRole={value} />
+          ))}
       </div>
       <article className='max-w-lg mx-auto'>
         <MDXRemote {...mdxSource} components={components} />
