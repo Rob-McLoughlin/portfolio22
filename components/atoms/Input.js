@@ -8,18 +8,25 @@ const Input = forwardRef(
       iconClickFn,
       error,
       success,
-      onKeyUp
+      onKeyUp,
+      fullWidth,
+      autoFocus
     },
     ref
   ) => {
     const iconClasses =
       'h-8 w-8 absolute top-2 bg-ink text-white p-1 rounded-lg transition'
     return (
-      <div className='relative input-wrapper max-w-sm'>
+      <div
+        className={`relative input-wrapper ${
+          fullWidth ? 'w-full' : 'max-w-sm'
+        }`}
+      >
         {prefixIcon && iconClickFn && (
           <button
-            className={`${iconClasses} left-2 cursor-pointer ${error &&
-              'bg-error'} ${success && 'bg-success'}`}
+            className={`${iconClasses} left-2 cursor-pointer ${
+              error && 'bg-error'
+            } ${success && 'bg-success'}`}
             type='button'
             onClick={iconClickFn}
           >
@@ -31,19 +38,21 @@ const Input = forwardRef(
         )}
 
         <input
-          className={`w-full px-4 py-3 border border-ink rounded-lg font-inter ${suffixIcon &&
-            'pr-2'} ${prefixIcon && 'pl-12'} ${error &&
-            'border-error text-error'}`}
+          className={`w-full px-4 py-3 border border-ink rounded-lg font-inter ${
+            suffixIcon && 'pr-2'
+          } ${prefixIcon && 'pl-12'} ${error && 'border-error text-error'}`}
           type='text'
           placeholder={placeholder}
           ref={ref}
           onKeyUp={onKeyUp}
+          autoFocus={autoFocus}
         />
 
         {suffixIcon && iconClickFn && (
           <button
-            className={`${iconClasses} right-2 cursor-pointer transition hover:bg-flamingo ${error &&
-              'bg-error'} ${success && 'bg-success'}`}
+            className={`${iconClasses} right-2 cursor-pointer transition hover:bg-flamingo ${
+              error && 'bg-error'
+            } ${success && 'bg-success'}`}
             type='button'
             onClick={iconClickFn}
           >

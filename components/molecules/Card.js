@@ -12,31 +12,34 @@ const Card = ({ title, subtitle, body, location, icon, href, flat }) => {
   }
   const inner = (
     <div
-      className={`group p-4 bg-white rounded-lg ${!flat &&
-        'card-shadow'} ${destination &&
-        'cursor-pointer hover:border-flamingo'} border-2 border-white transition text-ink max-w-sm`}
+      className={`group p-4 bg-white rounded-lg ${!flat && 'card-shadow'} ${
+        destination && 'cursor-pointer hover:border-flamingo'
+      } border-2 border-white transition text-ink max-w-sm`}
     >
-      <div className='relative flex gap-x-1'>
+      <div className='relative flex gap-x-2'>
         <div className='h-6 w-6 text-flamingo'>{icon}</div>
         <div>
           <span
-            className={`block text-body font-outfit transition-colors ${destination &&
-              'group-hover:text-flamingo'}`}
+            className={`block text-body font-inter font-semibold transition-colors ${
+              destination && 'group-hover:text-flamingo'
+            }`}
           >
             {title}
           </span>
           {subtitle && (
             <span
-              className={`subtitle mt-2 transition-colors ${destination &&
-                'group-hover:text-flamingo'}`}
+              className={`subtitle mt-2 transition-colors ${
+                destination && 'group-hover:text-flamingo'
+              }`}
             >
               {subtitle}
             </span>
           )}
         </div>
         <span
-          className={`text-meta font-outfit uppercase ml-auto transition ${destination &&
-            'group-hover:translate-y-4 group-hover:opacity-0'}`}
+          className={`text-meta font-inter font-semibold uppercase ml-auto transition ${
+            destination && 'group-hover:translate-y-4 group-hover:opacity-0'
+          }`}
         >
           {location}
         </span>

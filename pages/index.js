@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import { Box, GitHub, Book, Figma } from '@/atoms/Icon'
+import { Box, GitHub, Book, Figma, TrendLine } from '@/atoms/Icon'
 import Card from '@/molecules/Card'
 import WelcomePlate from '@/organisms/WelcomePlate'
 import { useState, useEffect } from 'react'
@@ -53,10 +53,10 @@ export default function Home ({ projects }) {
       <section id='intro'>
         <div className='mb-4 flex justify-between md:flex-row-reverse md:justify-end md:items-center md:gap-x-4'>
           <div>
-            <h1 className='homepage-title font-outfit text-h1 text-ink'>
+            <h1 className='homepage-title font-inter font-semibold text-h1 text-ink'>
               Rob McLoughlin
             </h1>
-            <span>Product Design @ Chupi &amp; Human</span>
+            <span>Senior Product Designer</span>
           </div>
           <div className='-mt-4 md:mt-0'>
             <Image alt='My face' src='/profile.png' width={64} height={64} />
@@ -64,16 +64,16 @@ export default function Home ({ projects }) {
         </div>
         <summary className='block'>
           <p className='mb-4 md:w-1/2'>
-            I am a designer and developer from Dublin with 5 years experience
-            defining problems and solving them through data-driven designs and
-            good infastructure.
+            I am a researcher, designer and strategist from Dublin, Ireland. I
+            help companies make great experiences. My work has been used by
+            millions of users over the past six years.
           </p>
         </summary>
       </section>
 
       <section
         id='jump-off'
-        className='py-24 flex flex-col gap-6 md:grid md:grid-cols-2'
+        className='py-16 flex flex-col gap-6 md:grid md:grid-cols-2'
       >
         <Card
           icon={<Box />}
@@ -88,10 +88,10 @@ export default function Home ({ projects }) {
           body='Good experiences start at the code level with efficient, best-practice code.'
         />
         <Card
-          icon={<Book />}
-          title='Books'
-          href='/books'
-          body='Some books I’ve read recently and liked. Pulled from my own personal Notion.'
+          icon={<TrendLine />}
+          title='Mentoring'
+          href='https://ux-tree.com/rob'
+          body='I am a mentor with the UX Tree, where I help other designers learn and develop.'
         />
         <Card
           icon={<Figma />}
@@ -102,9 +102,11 @@ export default function Home ({ projects }) {
       </section>
 
       <section id='projects' className='py-8'>
-        <h2 className='mb-4 font-outfit text-ink text-h1'>Recent Projects</h2>
+        <h2 className='mb-4 font-inter font-semibold text-ink text-h1'>
+          Recent Projects
+        </h2>
         <p className='md:w-1/2 mb-6'>
-          Here is a write up of some recent projects that I’ve done.
+          Here is a write up of some recent projects that I have worked on.
         </p>
         <ul className='flex flex-col gap-6 md:grid md:grid-cols-2'>
           {projects.map(({ slug, frontMatter: project }) => {

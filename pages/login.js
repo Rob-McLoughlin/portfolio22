@@ -65,21 +65,16 @@ const Login = ({}) => {
     <section className='flex justify-center min-h-full py-10'>
       <Head>
         <title>Portfolio Sign In</title>
-        <meta
-          name='description'
-          content='This site is password protected. There should be a password in the URL
-          parameters.'
-        />
+        <meta name='description' content='This site is password protected.' />
       </Head>
-      <div className='max-w-xs text-center'>
-        <h1 className='font-outfit text-h1 mb-4'>
-          This is a private portfolio
+      <div className='text-center'>
+        <h1 className='font-inter font-semibold text-flamingo text-h1 mb-4'>
+          Private Portfolio
         </h1>
         <p className='font-inter text-body mb-6'>
-          This site is password protected. There should be a password in the URL
-          parameters.
+          Please enter the password you received with this link.
         </p>
-        <form onSubmit={logIn} className={error && 'error-shake'}>
+        <form onSubmit={logIn} className={` ${error ? 'error-shake' : ''}`}>
           <Input
             placeholder='Enter Key'
             suffixIcon={inputIcon}
@@ -88,6 +83,8 @@ const Login = ({}) => {
             error={!!error}
             success={success}
             onKeyUp={handleKeyUp}
+            autoFocus
+            fullWidth
           />
           {error && <p className='mt-4 text-error'>{error}</p>}
         </form>

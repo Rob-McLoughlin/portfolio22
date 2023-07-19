@@ -5,8 +5,7 @@ import Head from 'next/head'
 const projects = [
   {
     title: 'Personal Portfolio',
-    link:
-      'https://www.figma.com/file/cyff5Us1LkuM2dIIOgG1Xo/Portfolio-22?node-id=210%3A267',
+    link: 'https://www.figma.com/file/cyff5Us1LkuM2dIIOgG1Xo/Portfolio-22?node-id=210%3A267',
     description:
       'I designed this site and the components for it with Figma, you can see it here!'
   }
@@ -21,7 +20,7 @@ const Figma = ({}) => {
       <section id='intro'>
         <div className='mb-4 flex justify-between'>
           <div>
-            <h1 className='font-outfit text-h1 text-ink'>Figma</h1>
+            <h1 className='font-inter font-semibold text-h1 text-ink'>Figma</h1>
           </div>
         </div>
         <p className='md:w-1/2'>
@@ -35,10 +34,7 @@ const Figma = ({}) => {
       <section className='mt-6'>
         <ul className='flex flex-col gap-6 md:grid md:grid-cols-2'>
           {projects.map(project => {
-            const titleKey = project.title
-              .toLowerCase()
-              .split(' ')
-              .join('-')
+            const titleKey = project.title.toLowerCase().split(' ').join('-')
             return (
               <li key={titleKey}>
                 <Card

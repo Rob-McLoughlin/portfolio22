@@ -14,12 +14,14 @@ const width = 'max-w-lg'
 // this object will contain all the replacements we want to make
 const components = {
   h2: props => (
-    <h2 className={`text-h2 text-flamingo font-outfit mb-4`}>
+    <h2 className={`text-h2 text-flamingo font-inter font-semibold mb-4`}>
       {props.children}
     </h2>
   ),
   h3: props => (
-    <h3 className='text-h4 text-flamingo font-outfit mb-4'>{props.children}</h3>
+    <h3 className='text-h4 text-flamingo font-inter font-semibold mb-4'>
+      {props.children}
+    </h3>
   ),
   p: props => <p className={`text-ink text-body mb-10`}>{props.children}</p>,
   strong: props => (
@@ -59,7 +61,9 @@ const PostPage = ({ frontMatter, mdxSource, otherProjects }) => {
       </Head>
       <div className='flex gap-x-4 mb-4 mt-32 max-w-lg mx-auto'>
         <div>
-          <h1 className='text-title font-outfit mb-1'>{frontMatter.title}</h1>
+          <h1 className='text-title font-inter font-semibold mb-1'>
+            {frontMatter.title}
+          </h1>
           <span>
             {frontMatter.year} | {frontMatter.at}
           </span>
@@ -95,7 +99,9 @@ const PostPage = ({ frontMatter, mdxSource, otherProjects }) => {
         <MDXRemote {...mdxSource} components={components} />
       </article>
       <section className='mt-24 border-t py-24 md:pb-0'>
-        <h3 className='text-h3 font-outfit mb-4'>Other Projects</h3>
+        <h3 className='text-h3 font-inter font-semibold mb-4'>
+          Other Projects
+        </h3>
         <ul className='flex flex-col gap-6 md:grid md:grid-cols-2'>
           {otherProjects.map(({ slug, frontMatter: project }) => {
             return (

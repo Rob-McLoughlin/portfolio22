@@ -5,7 +5,7 @@ const QuickLink = ({ icon, title, href, description }) => {
   return (
     <Link href={href}>
       <a className='quick-link flex flex-wrap items-center justify-between'>
-        <h2 className='py-2 font-outfit flex gap-x-2'>
+        <h2 className='py-2 font-inter font-semibold flex gap-x-2'>
           {icon}
           {title}
         </h2>

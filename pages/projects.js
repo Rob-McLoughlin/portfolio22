@@ -14,7 +14,7 @@ const Projects = ({ projects }) => {
       <section id='intro'>
         <div className='flex justify-between mb-4'>
           <div>
-            <h1 className='text-h1 font-outfit text-ink'>
+            <h1 className='text-h1 font-inter font-semibold text-ink'>
               Projects &amp; Work
             </h1>
           </div>

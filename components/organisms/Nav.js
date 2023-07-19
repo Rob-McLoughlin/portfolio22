@@ -55,14 +55,16 @@ const Nav = () => {
 
   return (
     <header
-      className={`fixed top-0 -left-0 w-full bg-white bg-opacity-80 z-20 backdrop-filter backdrop-blur-md overflow-hidden ${navOpen &&
-        'h-full nav-open'}`}
+      className={`fixed top-0 -left-0 w-full bg-white bg-opacity-80 z-20 backdrop-filter backdrop-blur-md overflow-hidden ${
+        navOpen && 'h-full nav-open'
+      }`}
     >
       <nav className='flex justify-between md:max-w-3xl md:mx-auto overflow-hidden'>
         <Link href='/'>
           <a
-            className={`flex font-outfit z-20 h-14 w-14 items-center justify-center hover:text-flamingo transition ${!showLogo &&
-              'translate-y-20 opacity-0'}`}
+            className={`flex font-inter font-semibold z-20 h-14 w-14 items-center justify-center hover:text-flamingo transition ${
+              !showLogo && 'translate-y-20 opacity-0'
+            }`}
           >
             RM
           </a>
@@ -100,14 +102,6 @@ const Nav = () => {
                 <a>
                   <GitHub />
                   Code
-                </a>
-              </Link>
-            </li>
-            <li>
-              <Link href='/books'>
-                <a>
-                  <Book />
-                  Books
                 </a>
               </Link>
             </li>
