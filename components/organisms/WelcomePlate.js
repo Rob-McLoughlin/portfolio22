@@ -17,7 +17,7 @@ const WelcomePlate = ({ invite, closeFn }) => {
         >
           <Close />
         </button>
-        <h3 className='mb-6 font-outfit text-h2'>
+        <h3 className='mb-6 font-inter font-semibold text-h2'>
           Hi {invite ? invite.name : 'there'}!
         </h3>
         <p className='text-body mb-6'>
